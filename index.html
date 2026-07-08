@@ -14,6 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class', // Enables manual Dark Mode toggling
             theme: {
                 extend: {
                     fontFamily: {
@@ -34,22 +35,28 @@
         }
     </script>
 </head>
-<body class="font-sans text-gray-800 antialiased bg-gray-50">
+<body class="font-sans text-gray-800 dark:text-gray-200 antialiased bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
 
-    <nav class="sticky top-0 z-50 bg-white shadow-md border-b border-gray-100">
+    <nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-user-shield text-3xl text-navy-800"></i>
-                    <span class="font-bold text-2xl tracking-tight text-navy-900">
+                    <i class="fa-solid fa-user-shield text-3xl text-navy-800 dark:text-brandOrange-500"></i>
+                    <span class="font-bold text-2xl tracking-tight text-navy-900 dark:text-white">
                         RK <span class="text-brandOrange-500">Man Power</span>
                     </span>
                 </div>
-                <div class="hidden md:flex space-x-8 items-center font-semibold text-sm">
-                    <a href="#" class="text-gray-600 hover:text-navy-800 transition">Home</a>
-                    <a href="#services" class="text-gray-600 hover:text-navy-800 transition">Services</a>
-                    <a href="#why-us" class="text-gray-600 hover:text-navy-800 transition">Why Us</a>
-                    <a href="#about" class="text-gray-600 hover:text-navy-800 transition">About</a>
+                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center font-semibold text-sm">
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-navy-800 dark:hover:text-brandOrange-500 transition">Home</a>
+                    <a href="#services" class="text-gray-600 dark:text-gray-300 hover:text-navy-800 dark:hover:text-brandOrange-500 transition">Services</a>
+                    <a href="#why-us" class="text-gray-600 dark:text-gray-300 hover:text-navy-800 dark:hover:text-brandOrange-500 transition">Why Us</a>
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-navy-800 dark:hover:text-brandOrange-500 transition">About</a>
+                    
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="themeToggle" class="text-gray-600 dark:text-gray-300 hover:text-brandOrange-500 dark:hover:text-brandOrange-500 transition text-xl outline-none" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon" id="themeIcon"></i>
+                    </button>
+
                     <a href="tel:+919886284220" class="bg-brandOrange-500 hover:bg-brandOrange-600 text-white px-6 py-2.5 rounded-md font-bold shadow-lg shadow-orange-500/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
                         <i class="fa-solid fa-phone"></i> Call Now: +91 9886284220
                     </a>
@@ -79,102 +86,102 @@
         </div>
     </header>
 
-    <section id="services" class="py-20 bg-gray-50">
+    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">Comprehensive Manpower Solutions</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 dark:text-white mb-4">Comprehensive Manpower Solutions</h2>
                 <div class="w-24 h-1 bg-brandOrange-500 mx-auto rounded"></div>
-                <p class="mt-4 text-lg text-gray-600">Tailored personnel deployments designed to keep your business running seamlessly.</p>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Tailored personnel deployments designed to keep your business running seamlessly.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 transition">
-                        <i class="fa-solid fa-shield-halved text-2xl text-navy-800 group-hover:text-white"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 dark:group-hover:bg-brandOrange-500 transition">
+                        <i class="fa-solid fa-shield-halved text-2xl text-navy-800 dark:text-white group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Security Solutions</h3>
-                    <p class="text-gray-600 leading-relaxed">Protecting your assets with uncompromising vigilance. We provide corporate security, residential guards, armed/unarmed personnel, event bouncers, and VIP protection details.</p>
+                    <h3 class="text-xl font-bold text-navy-900 dark:text-white mb-3">Security Solutions</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Protecting your assets with uncompromising vigilance. We provide corporate security, residential guards, armed/unarmed personnel, event bouncers, and VIP protection details.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 transition">
-                        <i class="fa-solid fa-broom text-2xl text-navy-800 group-hover:text-white"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 dark:group-hover:bg-brandOrange-500 transition">
+                        <i class="fa-solid fa-broom text-2xl text-navy-800 dark:text-white group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Housekeeping & Janitorial</h3>
-                    <p class="text-gray-600 leading-relaxed">Pristine environments drive productivity. Our services include commercial office cleaning, residential maintenance, specialized deep cleaning, and efficient pantry management.</p>
+                    <h3 class="text-xl font-bold text-navy-900 dark:text-white mb-3">Housekeeping & Janitorial</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Pristine environments drive productivity. Our services include commercial office cleaning, residential maintenance, specialized deep cleaning, and efficient pantry management.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 transition">
-                        <i class="fa-solid fa-briefcase text-2xl text-navy-800 group-hover:text-white"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 dark:group-hover:bg-brandOrange-500 transition">
+                        <i class="fa-solid fa-briefcase text-2xl text-navy-800 dark:text-white group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Corporate Support Staff</h3>
-                    <p class="text-gray-600 leading-relaxed">The backbone of your daily operations. We supply polished receptionists, accurate data entry operators, dependable office boys, and organized administrative assistants.</p>
+                    <h3 class="text-xl font-bold text-navy-900 dark:text-white mb-3">Corporate Support Staff</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">The backbone of your daily operations. We supply polished receptionists, accurate data entry operators, dependable office boys, and organized administrative assistants.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 transition">
-                        <i class="fa-solid fa-industry text-2xl text-navy-800 group-hover:text-white"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 dark:group-hover:bg-brandOrange-500 transition">
+                        <i class="fa-solid fa-industry text-2xl text-navy-800 dark:text-white group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Industrial & Factory Labor</h3>
-                    <p class="text-gray-600 leading-relaxed">Scale your output with confidence. We deploy skilled, semi-skilled, and unskilled workforce segments specialized for manufacturing, assembly lines, and warehouse management.</p>
+                    <h3 class="text-xl font-bold text-navy-900 dark:text-white mb-3">Industrial & Factory Labor</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Scale your output with confidence. We deploy skilled, semi-skilled, and unskilled workforce segments specialized for manufacturing, assembly lines, and warehouse management.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 transition">
-                        <i class="fa-solid fa-toolbox text-2xl text-navy-800 group-hover:text-white"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 dark:group-hover:bg-brandOrange-500 transition">
+                        <i class="fa-solid fa-toolbox text-2xl text-navy-800 dark:text-white group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Facility Management</h3>
-                    <p class="text-gray-600 leading-relaxed">Keep your infrastructure running flawlessly. Access our network of on-call electricians, certified plumbers, and proactive general maintenance staff.</p>
+                    <h3 class="text-xl font-bold text-navy-900 dark:text-white mb-3">Facility Management</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Keep your infrastructure running flawlessly. Access our network of on-call electricians, certified plumbers, and proactive general maintenance staff.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 transition">
-                        <i class="fa-solid fa-calendar-check text-2xl text-navy-800 group-hover:text-white"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-800 dark:group-hover:bg-brandOrange-500 transition">
+                        <i class="fa-solid fa-calendar-check text-2xl text-navy-800 dark:text-white group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Event Staffing</h3>
-                    <p class="text-gray-600 leading-relaxed">Deliver flawless events with our specialized team. We provide courteous valet drivers, authoritative crowd control personnel, and expert event coordinators.</p>
+                    <h3 class="text-xl font-bold text-navy-900 dark:text-white mb-3">Event Staffing</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Deliver flawless events with our specialized team. We provide courteous valet drivers, authoritative crowd control personnel, and expert event coordinators.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="why-us" class="py-20 bg-white">
+    <section id="why-us" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-6">Why RK Man Power is the Industry Standard</h2>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">We don't just fill vacancies; we mitigate your operational risks. Our stringent vetting and management processes ensure you only get the highest caliber of professionals.</p>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 dark:text-white mb-6">Why RK Man Power is the Industry Standard</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">We don't just fill vacancies; we mitigate your operational risks. Our stringent vetting and management processes ensure you only get the highest caliber of professionals.</p>
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mt-1">
-                                <i class="fa-solid fa-id-card-clip text-green-600 text-xl"></i>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-id-card-clip text-green-600 dark:text-green-400 text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-900">Strict Background Checks</h4>
-                                <p class="text-gray-600 mt-1">Absolute peace of mind. Every deployed personnel is 100% verified, heavily vetted, and fully police-cleared before they set foot on your premises.</p>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white">Strict Background Checks</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Absolute peace of mind. Every deployed personnel is 100% verified, heavily vetted, and fully police-cleared before they set foot on your premises.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mt-1">
-                                <i class="fa-solid fa-graduation-cap text-blue-600 text-xl"></i>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-graduation-cap text-blue-600 dark:text-blue-400 text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-900">Highly Trained Staff</h4>
-                                <p class="text-gray-600 mt-1">Raw talent polished into professionals. We subject our staff to rigorous training programs encompassing discipline, corporate etiquette, and crisis management.</p>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white">Highly Trained Staff</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Raw talent polished into professionals. We subject our staff to rigorous training programs encompassing discipline, corporate etiquette, and crisis management.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mt-1">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center mt-1">
                                 <i class="fa-solid fa-headset text-brandOrange-500 text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-900">24/7 Support & Replacement</h4>
-                                <p class="text-gray-600 mt-1">Business never sleeps, and neither do we. Enjoy round-the-clock client support and immediate staff replacement guarantees in case of absenteeism.</p>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white">24/7 Support & Replacement</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Business never sleeps, and neither do we. Enjoy round-the-clock client support and immediate staff replacement guarantees in case of absenteeism.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mt-1">
-                                <i class="fa-solid fa-file-signature text-purple-600 text-xl"></i>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-file-signature text-purple-600 dark:text-purple-400 text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-900">Statutory Compliance</h4>
-                                <p class="text-gray-600 mt-1">Zero legal headaches for your business. RK Man Power is fully compliant with all labor laws, including PF, ESI, and minimum wage regulations.</p>
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white">Statutory Compliance</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Zero legal headaches for your business. RK Man Power is fully compliant with all labor laws, including PF, ESI, and minimum wage regulations.</p>
                             </div>
                         </div>
                     </div>
@@ -194,30 +201,30 @@
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-blue-50 border-y border-blue-100">
+    <section id="about" class="py-20 bg-blue-50 dark:bg-gray-900 border-y border-blue-100 dark:border-gray-800 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex gap-4 mb-4 p-4 rounded-full bg-white shadow-md">
-                <i class="fa-solid fa-user-tie text-4xl text-navy-800"></i>
+            <div class="inline-flex gap-4 mb-4 p-4 rounded-full bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
+                <i class="fa-solid fa-user-tie text-4xl text-navy-800 dark:text-gray-200"></i>
                 <i class="fa-solid fa-user-tie text-4xl text-brandOrange-500"></i>
             </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-2">Meet the Leadership</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 dark:text-white mb-2">Meet the Leadership</h2>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-8">
-                <h3 class="text-xl text-brandOrange-600 font-bold">ANUSH R <span class="text-gray-500 font-medium text-lg ml-1">| Founder</span></h3>
-                <span class="hidden md:inline text-gray-300">&bull;</span>
-                <h3 class="text-xl text-navy-800 font-bold">SHILPA N <span class="text-gray-500 font-medium text-lg ml-1">| Co-Founder</span></h3>
+                <h3 class="text-xl text-brandOrange-600 dark:text-brandOrange-500 font-bold">ANUSH R <span class="text-gray-500 dark:text-gray-400 font-medium text-lg ml-1">| Founder</span></h3>
+                <span class="hidden md:inline text-gray-300 dark:text-gray-600">&bull;</span>
+                <h3 class="text-xl text-navy-800 dark:text-gray-200 font-bold">SHILPA N <span class="text-gray-500 dark:text-gray-400 font-medium text-lg ml-1">| Co-Founder</span></h3>
             </div>
 
-            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg text-left relative">
-                <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-6 left-6"></i>
-                <p class="text-gray-700 text-lg leading-relaxed relative z-10 mb-6">
+            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-2xl shadow-lg text-left relative transition-colors duration-300">
+                <i class="fa-solid fa-quote-left text-4xl text-blue-100 dark:text-gray-700 absolute top-6 left-6"></i>
+                <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed relative z-10 mb-6">
                     Under the visionary leadership of <strong>Anush R</strong> and <strong>Shilpa N</strong>, RK Man Power Service was established with a singular, unyielding mission: to bridge the vast gap between businesses demanding operational excellence and the reliable, hardworking personnel needed to achieve it.
                 </p>
-                <p class="text-gray-700 text-lg leading-relaxed relative z-10">
+                <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed relative z-10">
                     Together, they bring an unwavering commitment to quality. While Anush focuses on strategic growth and statutory compliance, Shilpa spearheads operational efficiency, talent acquisition, and client relations. This dynamic partnership ensures that every client interaction is built on transparency, trust, and accountability, positioning RK Man Power not just as an agency, but as a dedicated growth partner for your enterprise.
                 </p>
-                <div class="mt-8 flex items-center gap-4 pt-6 border-t border-gray-100">
-                    <a href="tel:+919886284220" class="text-navy-800 hover:text-brandOrange-500 font-semibold transition flex items-center gap-2">
+                <div class="mt-8 flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-gray-700">
+                    <a href="tel:+919886284220" class="text-navy-800 dark:text-brandOrange-500 hover:text-brandOrange-500 dark:hover:text-brandOrange-400 font-semibold transition flex items-center gap-2">
                         <i class="fa-solid fa-phone"></i> Contact the Leadership Team
                     </a>
                 </div>
@@ -225,13 +232,13 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-navy-900 text-white relative">
-        <div class="absolute inset-0 bg-gradient-to-br from-navy-900 to-navy-800"></div>
+    <section id="contact" class="py-24 bg-navy-900 dark:bg-black text-white relative transition-colors duration-300">
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-900 to-navy-800 dark:from-black dark:to-gray-900"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row gap-16">
                 <div class="lg:w-5/12">
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Ready to Scale Your Workforce?</h2>
-                    <p class="text-xl text-blue-200 mb-10">Don't let staffing shortages throttle your business. Contact us today for a free consultation and personalized manpower deployment plan.</p>
+                    <p class="text-xl text-blue-200 dark:text-gray-300 mb-10">Don't let staffing shortages throttle your business. Contact us today for a free consultation and personalized manpower deployment plan.</p>
                     
                     <div class="space-y-8">
                         <div class="flex items-center gap-6 group">
@@ -239,7 +246,7 @@
                                 <i class="fa-solid fa-phone-volume text-2xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-blue-200 uppercase tracking-wide font-semibold">Call Us 24/7</p>
+                                <p class="text-sm text-blue-200 dark:text-gray-400 uppercase tracking-wide font-semibold">Call Us 24/7</p>
                                 <a href="tel:+919886284220" class="text-2xl font-bold hover:text-brandOrange-400 transition">+91 9886284220</a>
                             </div>
                         </div>
@@ -249,7 +256,7 @@
                                 <i class="fa-solid fa-envelope text-2xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-blue-200 uppercase tracking-wide font-semibold">Email Us</p>
+                                <p class="text-sm text-blue-200 dark:text-gray-400 uppercase tracking-wide font-semibold">Email Us</p>
                                 <a href="mailto:rkmanpowerservices@outlook.com" class="text-lg font-bold hover:text-brandOrange-400 transition break-all">rkmanpowerservices@outlook.com</a>
                             </div>
                         </div>
@@ -260,11 +267,11 @@
                             </div>
                             <div class="space-y-4">
                                 <div>
-                                    <p class="text-sm text-blue-200 uppercase tracking-wide font-semibold">Founder</p>
+                                    <p class="text-sm text-blue-200 dark:text-gray-400 uppercase tracking-wide font-semibold">Founder</p>
                                     <p class="text-xl font-bold">ANUSH R</p>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-blue-200 uppercase tracking-wide font-semibold">Co-Founder</p>
+                                    <p class="text-sm text-blue-200 dark:text-gray-400 uppercase tracking-wide font-semibold">Co-Founder</p>
                                     <p class="text-xl font-bold">SHILPA N</p>
                                 </div>
                             </div>
@@ -273,29 +280,29 @@
                 </div>
 
                 <div class="lg:w-7/12">
-                    <div class="bg-white rounded-2xl p-8 md:p-10 shadow-2xl text-gray-800">
-                        <h3 class="text-2xl font-bold text-navy-900 mb-6">Request Manpower Pricing</h3>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-10 shadow-2xl text-gray-800 dark:text-gray-200 transition-colors duration-300">
+                        <h3 class="text-2xl font-bold text-navy-900 dark:text-white mb-6">Request Manpower Pricing</h3>
                         
                         <form id="quoteForm" class="space-y-5" novalidate>
                             <div id="formStatus" class="hidden rounded-lg p-4 text-sm font-bold mb-4"></div>
                             
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div>
-                                    <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-1">Full Name</label>
-                                    <input type="text" id="fullName" placeholder="John Doe" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 outline-none transition" required>
-                                    <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid name.</p>
+                                    <label for="fullName" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
+                                    <input type="text" id="fullName" placeholder="John Doe" class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-brandOrange-500 dark:focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 dark:focus:ring-brandOrange-800 outline-none transition text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400" required>
+                                    <p id="nameError" class="text-red-500 dark:text-red-400 text-xs mt-1 hidden">Please enter a valid name.</p>
                                 </div>
                                 <div>
-                                    <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1">Phone Number</label>
-                                    <input type="tel" id="phone" placeholder="+91 9886284220" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 outline-none transition" required>
-                                    <p id="phoneError" class="text-red-500 text-xs mt-1 hidden">Enter a valid 10-digit Indian phone number.</p>
+                                    <label for="phone" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" placeholder="+91 9886284220" class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-brandOrange-500 dark:focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 dark:focus:ring-brandOrange-800 outline-none transition text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400" required>
+                                    <p id="phoneError" class="text-red-500 dark:text-red-400 text-xs mt-1 hidden">Enter a valid 10-digit Indian phone number.</p>
                                 </div>
                             </div>
                             
                             <div>
-                                <label for="service" class="block text-sm font-semibold text-gray-700 mb-1">Service Required</label>
-                                <select id="service" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 outline-none transition" required>
-                                    <option value="" disabled selected>Select a service...</option>
+                                <label for="service" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Service Required</label>
+                                <select id="service" class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-brandOrange-500 dark:focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 dark:focus:ring-brandOrange-800 outline-none transition text-gray-900 dark:text-white" required>
+                                    <option value="" disabled selected class="text-gray-400">Select a service...</option>
                                     <option value="security">Security Solutions</option>
                                     <option value="housekeeping">Housekeeping & Janitorial</option>
                                     <option value="corporate">Corporate Support Staff</option>
@@ -304,21 +311,21 @@
                                     <option value="event">Event Staffing</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <p id="serviceError" class="text-red-500 text-xs mt-1 hidden">Please select a service.</p>
+                                <p id="serviceError" class="text-red-500 dark:text-red-400 text-xs mt-1 hidden">Please select a service.</p>
                             </div>
                             
                             <div>
-                                <label for="message" class="block text-sm font-semibold text-gray-700 mb-1">Message / Specific Requirements</label>
-                                <textarea id="message" rows="4" placeholder="Tell us about your business needs..." class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 outline-none transition" required></textarea>
-                                <p id="messageError" class="text-red-500 text-xs mt-1 hidden">Message must be at least 10 characters.</p>
+                                <label for="message" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Message / Specific Requirements</label>
+                                <textarea id="message" rows="4" placeholder="Tell us about your business needs..." class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-brandOrange-500 dark:focus:border-brandOrange-500 focus:ring-2 focus:ring-brandOrange-200 dark:focus:ring-brandOrange-800 outline-none transition text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400" required></textarea>
+                                <p id="messageError" class="text-red-500 dark:text-red-400 text-xs mt-1 hidden">Message must be at least 10 characters.</p>
                             </div>
                             
-                            <button type="submit" id="submitBtn" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-bold text-lg py-4 rounded-lg shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <button type="submit" id="submitBtn" class="w-full bg-navy-800 hover:bg-navy-900 dark:bg-brandOrange-500 dark:hover:bg-brandOrange-600 text-white font-bold text-lg py-4 rounded-lg shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
                                 <span id="btnText">Get Your Free Quote Now</span> 
                                 <i id="btnIcon" class="fa-solid fa-arrow-right"></i>
                                 <i id="btnSpinner" class="fa-solid fa-circle-notch fa-spin hidden"></i>
                             </button>
-                            <p class="text-xs text-center text-gray-500 mt-3">We respect your privacy. No spam, ever.</p>
+                            <p class="text-xs text-center text-gray-500 dark:text-gray-400 mt-3">We respect your privacy. No spam, ever.</p>
                         </form>
                     </div>
                 </div>
@@ -335,6 +342,40 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", () => {
+        
+        // ==========================================
+        // DARK MODE TOGGLE LOGIC
+        // ==========================================
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Check local storage to see if they visited before and chose dark mode
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        // When the user clicks the button...
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            
+            // Switch the icon and save to local storage
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+
+        // ==========================================
+        // FORM SUBMISSION LOGIC
+        // ==========================================
         const form = document.getElementById("quoteForm");
         const submitBtn = document.getElementById("submitBtn");
         const btnText = document.getElementById("btnText");
@@ -342,7 +383,6 @@
         const btnSpinner = document.getElementById("btnSpinner");
         const formStatus = document.getElementById("formStatus");
 
-        // Basic XSS Sanitization function
         const sanitizeInput = (str) => {
             return str.replace(/[&<>'"]/g, 
                 tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
@@ -352,11 +392,9 @@
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
             
-            // Reset Error Messages
             document.querySelectorAll("[id$='Error']").forEach(el => el.classList.add("hidden"));
             formStatus.classList.add("hidden");
 
-            // Get values
             const fullName = sanitizeInput(document.getElementById("fullName").value.trim());
             const phone = sanitizeInput(document.getElementById("phone").value.trim());
             const service = sanitizeInput(document.getElementById("service").value.trim());
@@ -364,26 +402,22 @@
 
             let isValid = true;
 
-            // 1. Validate Name
             if (fullName.length < 2) {
                 document.getElementById("nameError").classList.remove("hidden");
                 isValid = false;
             }
 
-            // 2. Validate Indian Phone Number
             const phoneRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
             if (!phoneRegex.test(phone)) {
                 document.getElementById("phoneError").classList.remove("hidden");
                 isValid = false;
             }
 
-            // 3. Validate Service
             if (service === "") {
                 document.getElementById("serviceError").classList.remove("hidden");
                 isValid = false;
             }
 
-            // 4. Validate Message
             if (message.length < 10) {
                 document.getElementById("messageError").classList.remove("hidden");
                 isValid = false;
@@ -391,7 +425,6 @@
 
             if (!isValid) return;
 
-            // UI Loading State
             btnText.textContent = "Sending Details...";
             btnIcon.classList.add("hidden");
             btnSpinner.classList.remove("hidden");
@@ -399,9 +432,6 @@
             submitBtn.classList.add("opacity-75", "cursor-not-allowed");
 
             try {
-                // ==========================================
-                // WEB3FORMS API INTEGRATION
-                // ==========================================
                 const response = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
                     headers: {
@@ -425,9 +455,8 @@
                 const result = await response.json();
 
                 if (response.status === 200) {
-                    // Success UI
                     formStatus.textContent = "Thank you! Your details have been sent to our team.";
-                    formStatus.className = "rounded-lg p-4 text-sm font-bold mb-4 bg-green-100 text-green-800 block";
+                    formStatus.className = "rounded-lg p-4 text-sm font-bold mb-4 bg-green-100 text-green-800 block dark:bg-green-900/50 dark:text-green-200";
                     form.reset();
                 } else {
                     throw new Error(result.message);
@@ -435,11 +464,9 @@
 
             } catch (error) {
                 console.error(error);
-                // Error UI
                 formStatus.textContent = "Failed to send message. Please email us directly at rkmanpowerservices@outlook.com";
-                formStatus.className = "rounded-lg p-4 text-sm font-bold mb-4 bg-red-100 text-red-800 block";
+                formStatus.className = "rounded-lg p-4 text-sm font-bold mb-4 bg-red-100 text-red-800 block dark:bg-red-900/50 dark:text-red-200";
             } finally {
-                // Restore Button UI
                 btnText.textContent = "Get Your Free Quote Now";
                 btnIcon.classList.remove("hidden");
                 btnSpinner.classList.add("hidden");
