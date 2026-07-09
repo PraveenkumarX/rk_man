@@ -1,952 +1,1907 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RK Man Power Service | Trusted Staffing Solutions</title>
-<meta name="description" content="RK Man Power Service — verified security, housekeeping, corporate support, industrial labor, facility management and event staffing across India.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RK Man Power Service | Premium Staffing & Facility Management</title>
+  <meta name="description"
+    content="RK Man Power Service — Tech-enabled, strictly verified security, housekeeping, corporate support, industrial labor, and facility management across India.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
-<style>
-  :root{
-    --void:#0a0d12;
-    --steel:#131924;
-    --steel-2:#1a2230;
-    --line:rgba(255,255,255,0.08);
-    --ink:#e9edf3;
-    --ink-dim:#9aa5b4;
-    --amber:#f97316;
-    --amber-2:#ffb347;
-    --cyan:#3fd8e0;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--void);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4{
-    font-family:'Oswald',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.01em;
-    margin:0;
-  }
-  .mono{font-family:'JetBrains Mono',monospace;}
-  a{color:inherit;text-decoration:none;}
-  ::selection{background:var(--amber);color:#000;}
+  <style>
+    :root {
+      --void: #0a0d12;
+      --steel: #131924;
+      --steel-2: #1a2230;
+      --line: rgba(255, 255, 255, 0.08);
+      --ink: #e9edf3;
+      --ink-dim: #9aa5b4;
+      --amber: #f97316;
+      --amber-2: #ffb347;
+      --cyan: #3fd8e0;
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  /* ---------- layout helpers ---------- */
-  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--amber);
-    display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{content:'';width:24px;height:1px;background:var(--amber);display:inline-block;}
-  .glass{
-    background:linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
-    border:1px solid var(--line);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-  }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-  /* ---------- nav ---------- */
-  nav{
-    position:sticky;top:0;z-index:100;
-    background:rgba(10,13,18,0.7);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;justify-content:space-between;align-items:center;height:78px;}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Oswald';font-weight:600;font-size:22px;letter-spacing:0.02em;}
-  .brand i{color:var(--amber);font-size:22px;}
-  .brand span{color:var(--amber);}
-  .nav-links{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:500;}
-  .nav-links a:not(.callbtn){color:var(--ink-dim);position:relative;padding:4px 0;}
-  .nav-links a:not(.callbtn):hover{color:var(--ink);}
-  .nav-links a:not(.callbtn)::after{
-    content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--amber);transition:width .3s ease;
-  }
-  .nav-links a:not(.callbtn):hover::after{width:100%;}
-  .callbtn{
-    background:var(--amber);color:#0a0d12;padding:11px 22px;border-radius:6px;font-weight:700;
-    display:flex;align-items:center;gap:8px;font-size:14px;
-    box-shadow:0 0 0 0 rgba(249,115,22,0.5);
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .callbtn:hover{box-shadow:0 0 24px 2px rgba(249,115,22,0.45);}
-  @media(max-width:860px){.nav-links a:not(.callbtn){display:none;} .nav-links{gap:14px;}}
+    body {
+      background: var(--void);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ---------- hero ---------- */
-  header.hero{
-    position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-    overflow:hidden;isolation:isolate;
-    background:
-      radial-gradient(1100px 700px at 50% 0%, #171f2c 0%, var(--void) 60%);
-  }
-  #dust-canvas{position:absolute;inset:0;z-index:0;}
-  .beam{
-    position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:radial-gradient(420px 420px at var(--mx,50%) var(--my,30%), rgba(249,178,71,0.16), rgba(249,178,71,0.05) 40%, transparent 65%);
-    transition:background-position .1s linear;
-  }
-  .hero-grid-lines{
-    position:absolute;inset:0;z-index:0;opacity:0.35;
-    background-image:linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-    background-size:64px 64px;
-    mask-image:radial-gradient(circle at 50% 30%, black 0%, transparent 70%);
-  }
-  .hero-inner{position:relative;z-index:2;text-align:center;padding:120px 24px 90px;}
-  .hero-inner .eyebrow{justify-content:center;margin-bottom:22px;}
-  .hero-inner .eyebrow::before{display:none;}
-  .hero-inner .eyebrow::after{content:'';width:24px;height:1px;background:var(--amber);display:inline-block;}
-  h1.headline{
-    font-size:clamp(38px,6.2vw,78px);
-    line-height:1.05;font-weight:600;color:#fff;max-width:920px;margin:0 auto 26px;
-  }
-  h1.headline .word{display:inline-block;opacity:0;transform:translateY(30px);}
-  h1.headline .accent{color:transparent;background:linear-gradient(90deg,var(--amber),var(--amber-2));-webkit-background-clip:text;background-clip:text;}
-  .hero-sub{font-size:18px;line-height:1.7;color:var(--ink-dim);max-width:640px;margin:0 auto 42px;font-weight:300;}
-  .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-  .btn{
-    position:relative;font-weight:700;font-size:15px;padding:16px 34px;border-radius:7px;
-    display:inline-flex;align-items:center;gap:10px;cursor:pointer;overflow:hidden;
-  }
-  .btn-primary{background:var(--amber);color:#0a0d12;}
-  .btn-primary:hover{box-shadow:0 8px 30px -6px rgba(249,115,22,0.55);}
-  .btn-ghost{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.18);color:#fff;}
-  .btn-ghost:hover{background:rgba(255,255,255,0.09);}
-  .magnetic{transition:transform .25s cubic-bezier(.2,.8,.2,1);}
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin: 0;
+    }
 
-  .scroll-cue{position:relative;z-index:2;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink-dim);font-size:11px;letter-spacing:0.18em;font-family:'JetBrains Mono';padding-bottom:36px;}
-  .scroll-cue .line{width:1px;height:36px;background:linear-gradient(180deg,var(--amber),transparent);animation:scrollpulse 1.8s ease-in-out infinite;}
-  @keyframes scrollpulse{0%,100%{opacity:0.2;}50%{opacity:1;}}
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
 
-  /* ---------- section shell ---------- */
-  section{position:relative;padding:110px 0;}
-  .section-head{text-align:center;max-width:640px;margin:0 auto 64px;}
-  .section-head h2{font-size:clamp(28px,4vw,42px);color:#fff;margin:14px 0 16px;font-weight:600;}
-  .section-head p{color:var(--ink-dim);font-size:16px;line-height:1.7;font-weight:300;}
-  .section-head .eyebrow{justify-content:center;}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  /* ---------- services ---------- */
-  #services{background:linear-gradient(180deg,var(--void),#0d1119 50%,var(--void));}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  @media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:640px){.svc-grid{grid-template-columns:1fr;}}
-  .svc-card{
-    border-radius:16px;padding:34px 28px;position:relative;overflow:hidden;
-    transition:transform .35s ease, border-color .35s ease;
-    transform-style:preserve-3d;
-  }
-  .svc-card::before{
-    content:'';position:absolute;inset:0;border-radius:16px;padding:1px;
-    background:linear-gradient(135deg, rgba(249,115,22,0.35), transparent 40%);
-    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;mask-composite:exclude;
-    opacity:0;transition:opacity .35s ease;
-  }
-  .svc-card:hover::before{opacity:1;}
-  .svc-card:hover{transform:translateY(-6px);border-color:rgba(249,115,22,0.3);}
-  .svc-icon{
-    width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-    background:rgba(249,115,22,0.09);border:1px solid rgba(249,115,22,0.25);margin-bottom:22px;
-    transition:background .3s ease,transform .3s ease;
-  }
-  .svc-card:hover .svc-icon{background:var(--amber);transform:rotate(-6deg) scale(1.06);}
-  .svc-icon i{font-size:20px;color:var(--amber);}
-  .svc-card:hover .svc-icon i{color:#0a0d12;}
-  .svc-card h3{font-size:19px;color:#fff;margin-bottom:12px;font-weight:600;letter-spacing:0.01em;}
-  .svc-card p{color:var(--ink-dim);font-size:14.5px;line-height:1.65;font-weight:300;}
+    ::selection {
+      background: var(--amber);
+      color: #000;
+    }
 
-  /* ---------- why us ---------- */
-  #why{background:var(--steel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-  @media(max-width:900px){.why-grid{grid-template-columns:1fr;}}
-  .why-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);}
-  .why-item:last-child{border-bottom:none;}
-  .why-badge{
-    flex-shrink:0;width:48px;height:48px;border-radius:50%;
-    background:rgba(63,216,224,0.08);border:1px solid rgba(63,216,224,0.3);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .why-badge i{color:var(--cyan);font-size:18px;}
-  .why-item h4{font-size:17px;color:#fff;margin-bottom:6px;text-transform:none;font-family:'Inter';font-weight:700;}
-  .why-item p{color:var(--ink-dim);font-size:14.5px;line-height:1.6;font-weight:300;}
-  .why-visual{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;}
-  .why-visual img{width:100%;height:100%;object-fit:cover;filter:saturate(0.85) brightness(0.75);}
-  .why-visual .scan{
-    position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-    animation:scan 3.2s linear infinite;
-  }
-  @keyframes scan{0%{top:0;}100%{top:100%;}}
-  .stat-plate{position:absolute;bottom:20px;left:20px;right:20px;padding:22px;border-radius:12px;}
-  .stat-plate .num{font-family:'Oswald';font-size:38px;color:var(--amber);font-weight:600;line-height:1;}
-  .stat-plate .lbl{color:#fff;font-size:14px;margin-top:6px;font-weight:500;}
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
 
-  /* ---------- about ---------- */
-  #about{background:linear-gradient(180deg,var(--void),#0d1119);}
-  .founders{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:640px;margin:0 auto 40px;}
-  @media(max-width:640px){.founders{grid-template-columns:1fr;}}
-  .founder-card{border-radius:16px;padding:26px;text-align:center;}
-  .avatar{
-    width:64px;height:64px;border-radius:50%;margin:0 auto 14px;
-    background:linear-gradient(135deg,var(--amber),var(--amber-2));
-    display:flex;align-items:center;justify-content:center;font-family:'Oswald';font-weight:600;font-size:22px;color:#0a0d12;
-  }
-  .founder-card h4{font-size:16px;color:#fff;text-transform:none;font-weight:700;}
-  .founder-card span{display:block;color:var(--ink-dim);font-size:12.5px;margin-top:2px;letter-spacing:0.05em;text-transform:uppercase;font-family:'JetBrains Mono';}
-  .quote-panel{border-radius:18px;padding:44px 40px;position:relative;max-width:820px;margin:0 auto;}
-  .quote-panel i.fa-quote-left{position:absolute;top:24px;left:28px;font-size:32px;color:rgba(249,115,22,0.18);}
-  .quote-panel p{color:#cbd3de;font-size:16.5px;line-height:1.85;font-weight:300;position:relative;z-index:1;}
-  .quote-panel p + p{margin-top:18px;}
-  .quote-panel .cta-line{margin-top:26px;padding-top:24px;border-top:1px solid var(--line);}
-  .quote-panel .cta-line a{color:var(--amber);font-weight:600;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;}
+    /* ---------- layout helpers ---------- */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  /* ---------- contact ---------- */
-  #contact{
-    background:radial-gradient(900px 500px at 20% 0%, #171f2c, var(--void) 60%);
-    border-top:1px solid var(--line);
-  }
-  .contact-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;}
-  @media(max-width:960px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-info h2{font-size:clamp(28px,4vw,40px);color:#fff;margin-bottom:16px;font-weight:600;}
-  .contact-info > p{color:var(--ink-dim);font-size:16px;line-height:1.7;margin-bottom:36px;font-weight:300;}
-  .info-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);}
-  .info-row:last-child{border-bottom:none;}
-  .info-icon{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .3s ease,border-color .3s ease;}
-  .info-row:hover .info-icon{background:var(--amber);border-color:var(--amber);}
-  .info-icon i{font-size:18px;color:#fff;}
-  .info-row:hover .info-icon i{color:#0a0d12;}
-  .info-row .lbl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);}
-  .info-row .val{font-size:17px;font-weight:600;color:#fff;}
-  .info-row a.val:hover{color:var(--amber);}
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  .form-panel{border-radius:18px;padding:40px;}
-  .form-panel h3{font-size:20px;color:#fff;margin-bottom:26px;font-weight:600;letter-spacing:0.01em;}
-  .field{position:relative;margin-bottom:22px;}
-  .field label{display:block;font-size:12px;font-family:'JetBrains Mono';letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:8px;}
-  .field input, .field select, .field textarea{
-    width:100%;padding:14px 16px;border-radius:9px;background:rgba(255,255,255,0.03);
-    border:1px solid var(--line);color:#fff;font-family:'Inter';font-size:14.5px;outline:none;
-    transition:border-color .25s ease, box-shadow .25s ease;
-  }
-  .field select option{background:#131924;color:#fff;}
-  .field input:focus, .field select:focus, .field textarea:focus{
-    border-color:var(--amber);box-shadow:0 0 0 3px rgba(249,115,22,0.14);
-  }
-  .field input::placeholder, .field textarea::placeholder{color:#5b6473;}
-  .field .err{color:#ff8080;font-size:12px;margin-top:6px;display:none;}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  @media(max-width:560px){.row2{grid-template-columns:1fr;}}
-  #formStatus{border-radius:10px;padding:14px 16px;font-size:14px;font-weight:600;margin-bottom:18px;display:none;}
-  #formStatus.ok{display:block;background:rgba(63,216,224,0.12);border:1px solid rgba(63,216,224,0.35);color:var(--cyan);}
-  #formStatus.bad{display:block;background:rgba(255,90,90,0.1);border:1px solid rgba(255,90,90,0.3);color:#ff8f8f;}
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--amber);
+      display: inline-block;
+    }
 
-  .submit-btn{
-    width:100%;padding:17px;border-radius:9px;border:none;cursor:pointer;
-    background:linear-gradient(90deg,var(--amber),var(--amber-2));color:#0a0d12;font-weight:700;font-size:15px;
-    display:flex;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .submit-btn:hover{box-shadow:0 10px 30px -8px rgba(249,115,22,0.6);}
-  .submit-btn:disabled{opacity:0.7;cursor:not-allowed;}
-  .privacy-note{text-align:center;font-size:12px;color:var(--ink-dim);margin-top:14px;}
+    .glass {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+      border: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
 
-  /* ---------- footer ---------- */
-  footer{padding:38px 0;text-align:center;border-top:1px solid var(--line);color:var(--ink-dim);font-size:13px;}
-  footer .brand-mini{color:var(--amber);font-weight:600;}
+    /* ---------- nav ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 13, 18, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
 
-  /* reveal helper */
-  .reveal{opacity:0;transform:translateY(26px);}
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 78px;
+    }
 
-  /* Lenis smooth scroll recommended styles */
-  html.lenis, html.lenis body {
-    height: auto;
-  }
-  .lenis-smooth {
-    scroll-behavior: auto !important;
-  }
-  .lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-  .lenis-stopped {
-    overflow: hidden;
-  }
-  .lenis-scrolling iframe {
-    pointer-events: none;
-  }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Oswald';
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
 
-  /* 3D and floating glow effects */
-  .perspective-container {
-    perspective: 1200px;
-    transform-style: preserve-3d;
-  }
-  .three3d-element {
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    will-change: transform, opacity;
-  }
-  .glow-blob {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    filter: blur(140px);
-    opacity: 0.12;
-    mix-blend-mode: screen;
-    will-change: transform;
-  }
-</style>
+    .brand i {
+      color: var(--amber);
+      font-size: 22px;
+    }
+
+    .brand span {
+      color: var(--amber);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a:not(.callbtn) {
+      color: var(--ink-dim);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a:not(.callbtn):hover {
+      color: var(--ink);
+    }
+
+    .nav-links a:not(.callbtn)::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--amber);
+      transition: width .3s ease;
+    }
+
+    .nav-links a:not(.callbtn):hover::after {
+      width: 100%;
+    }
+
+    .callbtn {
+      background: var(--amber);
+      color: #0a0d12;
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.5);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .callbtn:hover {
+      box-shadow: 0 0 24px 2px rgba(249, 115, 22, 0.45);
+    }
+
+    @media(max-width:860px) {
+      .nav-links a:not(.callbtn) {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+    }
+
+    /* ---------- hero ---------- */
+    header.hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      isolation: isolate;
+      background: radial-gradient(1100px 700px at 50% 0%, #171f2c 0%, var(--void) 60%);
+    }
+
+    #dust-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .beam {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: radial-gradient(420px 420px at var(--mx, 50%) var(--my, 30%), rgba(249, 178, 71, 0.16), rgba(249, 178, 71, 0.05) 40%, transparent 65%);
+      transition: background-position .1s linear;
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.35;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at 50% 30%, black 0%, transparent 70%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 120px 24px 90px;
+    }
+
+    .hero-inner .eyebrow {
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .hero-inner .eyebrow::before {
+      display: none;
+    }
+
+    .hero-inner .eyebrow::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--amber);
+      display: inline-block;
+    }
+
+    h1.headline {
+      font-size: clamp(38px, 6.2vw, 78px);
+      line-height: 1.05;
+      font-weight: 600;
+      color: #fff;
+      max-width: 980px;
+      margin: 0 auto 26px;
+    }
+
+    h1.headline .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    h1.headline .accent {
+      color: transparent;
+      background: linear-gradient(90deg, var(--amber), var(--amber-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink-dim);
+      max-width: 700px;
+      margin: 0 auto 42px;
+      font-weight: 300;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      position: relative;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 34px;
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: #0a0d12;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 8px 30px -6px rgba(249, 115, 22, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .magnetic {
+      transition: transform .25s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    /* Stats Bar inside Hero */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      border-top: 1px solid var(--line);
+      padding-top: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item {
+      text-align: center;
+    }
+
+    .hero-stat-num {
+      font-family: 'Oswald';
+      font-size: 32px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .hero-stat-num span {
+      color: var(--amber);
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      font-family: 'JetBrains Mono';
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    .scroll-cue {
+      position: relative;
+      z-index: 2;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink-dim);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      font-family: 'JetBrains Mono';
+      padding-top: 40px;
+      padding-bottom: 36px;
+    }
+
+    .scroll-cue .line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(180deg, var(--amber), transparent);
+      animation: scrollpulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollpulse {
+
+      0%,
+      100% {
+        opacity: 0.2;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* ---------- section shell ---------- */
+    section {
+      position: relative;
+      padding: 110px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      color: #fff;
+      margin: 14px 0 16px;
+      font-weight: 600;
+    }
+
+    .section-head p {
+      color: var(--ink-dim);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .section-head .eyebrow {
+      justify-content: center;
+    }
+
+    /* ---------- services ---------- */
+    #services {
+      background: linear-gradient(180deg, var(--void), #0d1119 50%, var(--void));
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    @media(max-width:960px) {
+      .svc-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:640px) {
+      .svc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .svc-card {
+      border-radius: 16px;
+      padding: 34px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s ease, border-color .35s ease;
+      transform-style: preserve-3d;
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.35), transparent 40%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+
+    .svc-card:hover::before {
+      opacity: 1;
+    }
+
+    .svc-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(249, 115, 22, 0.3);
+    }
+
+    .svc-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(249, 115, 22, 0.09);
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      margin-bottom: 22px;
+      transition: background .3s ease, transform .3s ease;
+    }
+
+    .svc-card:hover .svc-icon {
+      background: var(--amber);
+      transform: rotate(-6deg) scale(1.06);
+    }
+
+    .svc-icon i {
+      font-size: 20px;
+      color: var(--amber);
+    }
+
+    .svc-card:hover .svc-icon i {
+      color: #0a0d12;
+    }
+
+    .svc-card h3 {
+      font-size: 19px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .svc-card p {
+      color: var(--ink-dim);
+      font-size: 14.5px;
+      line-height: 1.65;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .svc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .svc-tag {
+      font-size: 11px;
+      font-family: 'JetBrains Mono';
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: var(--cyan);
+      border: 1px solid rgba(63, 216, 224, 0.15);
+    }
+
+    /* ---------- process (NEW) ---------- */
+    #process {
+      background: var(--steel-2);
+      border-top: 1px solid var(--line);
+      padding: 90px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    @media(max-width:900px) {
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+    }
+
+    @media(max-width:500px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-num {
+      font-family: 'Oswald';
+      font-size: 48px;
+      color: rgba(249, 115, 22, 0.2);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 12px;
+      transition: color 0.3s ease;
+    }
+
+    .process-card:hover .step-num {
+      color: var(--amber);
+    }
+
+    .process-card h4 {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--ink-dim);
+      line-height: 1.6;
+    }
+
+    /* ---------- why us ---------- */
+    #why {
+      background: var(--steel);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @media(max-width:900px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .why-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .why-item:last-child {
+      border-bottom: none;
+    }
+
+    .why-badge {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(63, 216, 224, 0.08);
+      border: 1px solid rgba(63, 216, 224, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .why-badge i {
+      color: var(--cyan);
+      font-size: 18px;
+    }
+
+    .why-item h4 {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 6px;
+      text-transform: none;
+      font-family: 'Inter';
+      font-weight: 700;
+    }
+
+    .why-item p {
+      color: var(--ink-dim);
+      font-size: 14.5px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .why-visual {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+
+    .why-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.85) brightness(0.75);
+    }
+
+    .why-visual .scan {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      animation: scan 3.2s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        top: 0;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    .stat-plate {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      padding: 22px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-plate .num {
+      font-family: 'Oswald';
+      font-size: 38px;
+      color: var(--amber);
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .stat-plate .lbl {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ---------- testimonials (NEW) ---------- */
+    #testimonials {
+      background: var(--void);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media(max-width:900px) {
+      .testi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:600px) {
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testi-card {
+      padding: 32px;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .testi-card i.fa-quote-right {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 40px;
+      color: rgba(255, 255, 255, 0.03);
+    }
+
+    .stars {
+      color: var(--amber);
+      font-size: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 4px;
+    }
+
+    .testi-card p {
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .client-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--steel-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--cyan);
+      border: 1px solid var(--line);
+    }
+
+    .client-details h5 {
+      font-family: 'Inter';
+      font-size: 14px;
+      color: #fff;
+      text-transform: none;
+      margin: 0 0 2px 0;
+      font-weight: 600;
+    }
+
+    .client-details span {
+      font-size: 12px;
+      color: var(--ink-dim);
+      font-family: 'JetBrains Mono';
+    }
+
+    /* ---------- about ---------- */
+    #about {
+      background: linear-gradient(180deg, var(--void), #0d1119);
+    }
+
+    .founders {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    @media(max-width:640px) {
+      .founders {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .founder-card {
+      border-radius: 16px;
+      padding: 26px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      background: linear-gradient(135deg, var(--amber), var(--amber-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald';
+      font-weight: 600;
+      font-size: 22px;
+      color: #0a0d12;
+    }
+
+    .founder-card h4 {
+      font-size: 16px;
+      color: #fff;
+      text-transform: none;
+      font-weight: 700;
+    }
+
+    .founder-card span {
+      display: block;
+      color: var(--ink-dim);
+      font-size: 12.5px;
+      margin-top: 2px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono';
+    }
+
+    .quote-panel {
+      border-radius: 18px;
+      padding: 44px 40px;
+      position: relative;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .quote-panel i.fa-quote-left {
+      position: absolute;
+      top: 24px;
+      left: 28px;
+      font-size: 32px;
+      color: rgba(249, 115, 22, 0.18);
+    }
+
+    .quote-panel p {
+      color: #cbd3de;
+      font-size: 16.5px;
+      line-height: 1.85;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-panel p+p {
+      margin-top: 18px;
+    }
+
+    .quote-panel .cta-line {
+      margin-top: 26px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .quote-panel .cta-line a {
+      color: var(--amber);
+      font-weight: 600;
+      font-size: 14.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ---------- contact ---------- */
+    #contact {
+      background: radial-gradient(900px 500px at 20% 0%, #171f2c, var(--void) 60%);
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+    }
+
+    @media(max-width:960px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-info h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      color: #fff;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .contact-info>p {
+      color: var(--ink-dim);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .3s ease, border-color .3s ease;
+    }
+
+    .info-row:hover .info-icon {
+      background: var(--amber);
+      border-color: var(--amber);
+    }
+
+    .info-icon i {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .info-row:hover .info-icon i {
+      color: #0a0d12;
+    }
+
+    .info-row .lbl {
+      font-family: 'JetBrains Mono';
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+    }
+
+    .info-row .val {
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .info-row a.val:hover {
+      color: var(--amber);
+    }
+
+    .form-panel {
+      border-radius: 18px;
+      padding: 40px;
+    }
+
+    .form-panel h3 {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 26px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .field {
+      position: relative;
+      margin-bottom: 22px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-family: 'JetBrains Mono';
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      color: #fff;
+      font-family: 'Inter';
+      font-size: 14.5px;
+      outline: none;
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .field select option {
+      background: #131924;
+      color: #fff;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.14);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #5b6473;
+    }
+
+    .field .err {
+      color: #ff8080;
+      font-size: 12px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    @media(max-width:560px) {
+      .row2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #formStatus {
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      display: none;
+    }
+
+    #formStatus.ok {
+      display: block;
+      background: rgba(63, 216, 224, 0.12);
+      border: 1px solid rgba(63, 216, 224, 0.35);
+      color: var(--cyan);
+    }
+
+    #formStatus.bad {
+      display: block;
+      background: rgba(255, 90, 90, 0.1);
+      border: 1px solid rgba(255, 90, 90, 0.3);
+      color: #ff8f8f;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 17px;
+      border-radius: 9px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(90deg, var(--amber), var(--amber-2));
+      color: #0a0d12;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .submit-btn:hover {
+      box-shadow: 0 10px 30px -8px rgba(249, 115, 22, 0.6);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .privacy-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-dim);
+      margin-top: 14px;
+    }
+
+    /* ---------- footer ---------- */
+    footer {
+      padding: 38px 0;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      color: var(--ink-dim);
+      font-size: 13px;
+    }
+
+    footer .brand-mini {
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    /* reveal helper */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+    }
+
+    /* Lenis smooth scroll recommended styles */
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+
+    .lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
+    /* 3D and floating glow effects */
+    .perspective-container {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+    }
+
+    .three3d-element {
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      will-change: transform, opacity;
+    }
+
+    .glow-blob {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(140px);
+      opacity: 0.12;
+      mix-blend-mode: screen;
+      will-change: transform;
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="wrap nav-inner">
-    <div class="brand"><i class="fa-solid fa-user-shield"></i> RK <span>Man Power</span></div>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#about">About</a>
-      <a href="tel:+919886284220" class="callbtn magnetic"><i class="fa-solid fa-phone"></i> +91 9886284220</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <canvas id="dust-canvas"></canvas>
-  <div class="hero-grid-lines"></div>
-  <div class="beam" id="beam"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">India's Trusted Staffing Agency</div>
-    <h1 class="headline" id="headline">Empowering your business with <span class="accent">trusted, trained,</span> and reliable manpower.</h1>
-    <p class="hero-sub">From elite security guards to meticulous housekeeping and skilled industrial labor, RK Man Power Service provides verified professionals tailored to your exact operational needs.</p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary magnetic">Request a Callback <i class="fa-solid fa-arrow-right"></i></a>
-      <a href="#services" class="btn btn-ghost magnetic">View Our Services</a>
-    </div>
-  </div>
-  <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
-</header>
-
-<section id="services" class="perspective-container" style="position:relative; overflow:hidden;">
-  <div class="glow-blob" style="top: 10%; left: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
-  <div class="glow-blob" style="bottom: 10%; right: -20%; background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);"></div>
-  <div class="wrap" style="position:relative; z-index:1;">
-    <div class="section-head reveal">
-      <div class="eyebrow">What We Deploy</div>
-      <h2>Comprehensive manpower solutions</h2>
-      <p>Tailored personnel deployments designed to keep your business running seamlessly.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card glass three3d-element">
-        <div class="svc-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Security Solutions</h3>
-        <p>Protecting your assets with uncompromising vigilance. We provide corporate security, residential guards, armed/unarmed personnel, event bouncers, and VIP protection details.</p>
-      </div>
-      <div class="svc-card glass three3d-element">
-        <div class="svc-icon"><i class="fa-solid fa-broom"></i></div>
-        <h3>Housekeeping & Janitorial</h3>
-        <p>Pristine environments drive productivity. Our services include commercial office cleaning, residential maintenance, specialized deep cleaning, and efficient pantry management.</p>
-      </div>
-      <div class="svc-card glass three3d-element">
-        <div class="svc-icon"><i class="fa-solid fa-briefcase"></i></div>
-        <h3>Corporate Support Staff</h3>
-        <p>The backbone of your daily operations. We supply polished receptionists, accurate data entry operators, dependable office boys, and organized administrative assistants.</p>
-      </div>
-      <div class="svc-card glass three3d-element">
-        <div class="svc-icon"><i class="fa-solid fa-industry"></i></div>
-        <h3>Industrial & Factory Labor</h3>
-        <p>Scale your output with confidence. We deploy skilled, semi-skilled, and unskilled workforce segments specialized for manufacturing, assembly lines, and warehouse management.</p>
-      </div>
-      <div class="svc-card glass three3d-element">
-        <div class="svc-icon"><i class="fa-solid fa-toolbox"></i></div>
-        <h3>Facility Management</h3>
-        <p>Keep your infrastructure running flawlessly. Access our network of on-call electricians, certified plumbers, and proactive general maintenance staff.</p>
-      </div>
-      <div class="svc-card glass three3d-element">
-        <div class="svc-icon"><i class="fa-solid fa-calendar-check"></i></div>
-        <h3>Event Staffing</h3>
-        <p>Deliver flawless events with our specialized team. We provide courteous valet drivers, authoritative crowd control personnel, and expert event coordinators.</p>
+  <nav>
+    <div class="wrap nav-inner">
+      <div class="brand"><i class="fa-solid fa-user-shield"></i> RK <span>Man Power</span></div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#about">About</a>
+        <a href="tel:+919886284220" class="callbtn magnetic"><i class="fa-solid fa-phone"></i> +91 9886284220</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section id="why" class="perspective-container" style="position:relative; overflow:hidden;">
-  <div class="glow-blob" style="top: 20%; right: -15%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
-  <div class="wrap why-grid" style="position:relative; z-index:1;">
-    <div>
-      <div class="eyebrow reveal">The RK Standard</div>
-      <h2 style="font-size:clamp(26px,3.6vw,38px);color:#fff;margin:14px 0 18px;font-weight:600;" class="reveal">Why RK Man Power is the industry standard</h2>
-      <p style="color:var(--ink-dim);font-size:15.5px;line-height:1.7;font-weight:300;margin-bottom:8px;" class="reveal">We don't just fill vacancies; we mitigate your operational risks. Our stringent vetting and management processes ensure you only get the highest caliber of professionals.</p>
+  <header class="hero">
+    <canvas id="dust-canvas"></canvas>
+    <div class="hero-grid-lines"></div>
+    <div class="beam" id="beam"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Enterprise-Grade Staffing Solutions</div>
+      <h1 class="headline" id="headline">Empowering your business with trusted, trained,and reliable manpower. <span
+          class="accent">verified, trained,</span>
+      </h1>
+      <p class="hero-sub">RK Man Power Service bridges the operational gap with strictly vetted security, mechanized
+        housekeeping, and skilled industrial workforce—ensuring 100% statutory compliance and zero administrative
+        headaches.</p>
 
-      <div class="why-item reveal">
-        <div class="why-badge"><i class="fa-solid fa-id-card-clip"></i></div>
-        <div><h4>Strict Background Checks</h4><p>Absolute peace of mind. Every deployed personnel is 100% verified, heavily vetted, and fully police-cleared before they set foot on your premises.</p></div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary magnetic">Request a Site Audit <i
+            class="fa-solid fa-arrow-right"></i></a>
+        <a href="#services" class="btn btn-ghost magnetic">Explore Our Solutions</a>
       </div>
-      <div class="why-item reveal">
-        <div class="why-badge"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div><h4>Highly Trained Staff</h4><p>Raw talent polished into professionals. We subject our staff to rigorous training programs encompassing discipline, corporate etiquette, and crisis management.</p></div>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-badge"><i class="fa-solid fa-headset"></i></div>
-        <div><h4>24/7 Support & Replacement</h4><p>Business never sleeps, and neither do we. Enjoy round-the-clock client support and immediate staff replacement guarantees in case of absenteeism.</p></div>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-badge"><i class="fa-solid fa-file-signature"></i></div>
-        <div><h4>Statutory Compliance</h4><p>Zero legal headaches for your business. RK Man Power is fully compliant with all labor laws, including PF, ESI, and minimum wage regulations.</p></div>
+
+      <!-- New Stats Strip -->
+      <div class="hero-stats reveal">
+        <div class="hero-stat-item">
+          <div class="hero-stat-num" data-val="500">0<span>+</span></div>
+          <div class="hero-stat-label">Active Personnel</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num" data-val="99">0<span>%</span></div>
+          <div class="hero-stat-label">SLA Compliance</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num" data-val="100">0<span>%</span></div>
+          <div class="hero-stat-label">PF/ESI Compliant</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num" data-val="24">0<span>/7</span></div>
+          <div class="hero-stat-label">Operations Support</div>
+        </div>
       </div>
     </div>
 
-    <div class="why-visual three3d-element">
-      <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional staffing">
-      <div class="scan"></div>
-      <div class="stat-plate glass">
-        <div class="num" data-count="100">0%</div>
-        <div class="lbl">Compliance &amp; Verification Guarantee</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="scroll-cue"><span>DISCOVER MORE</span><span class="line"></span></div>
+  </header>
 
-<section id="about" class="perspective-container" style="position:relative; overflow:hidden;">
-  <div class="glow-blob" style="top: 40%; left: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
-  <div class="wrap" style="text-align:center; position:relative; z-index:1;">
-    <div class="eyebrow reveal" style="justify-content:center;">Leadership</div>
-    <h2 style="font-size:clamp(26px,3.6vw,38px);color:#fff;margin:14px 0 34px;font-weight:600;" class="reveal">Meet the leadership</h2>
-
-    <div class="founders">
-      <div class="founder-card glass three3d-element">
-        <div class="avatar">AR</div>
-        <h4>Anush R</h4>
-        <span>Founder</span>
+  <section id="services" class="perspective-container" style="position:relative; overflow:hidden;">
+    <div class="glow-blob"
+      style="top: 10%; left: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+    <div class="glow-blob"
+      style="bottom: 10%; right: -20%; background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);"></div>
+    <div class="wrap" style="position:relative; z-index:1;">
+      <div class="section-head reveal">
+        <div class="eyebrow">Sector-Specific Deployments</div>
+        <h2>Comprehensive Facility Solutions</h2>
+        <p>We supply rigorously trained professionals equipped with the right technology and domain knowledge to
+          seamlessly integrate into your daily operations.</p>
       </div>
-      <div class="founder-card glass three3d-element">
-        <div class="avatar">SN</div>
-        <h4>Shilpa N</h4>
-        <span>Co-Founder</span>
-      </div>
-    </div>
-
-    <div class="quote-panel glass reveal">
-      <i class="fa-solid fa-quote-left"></i>
-      <p>Under the visionary leadership of <strong>Anush R</strong> and <strong>Shilpa N</strong>, RK Man Power Service was established with a singular, unyielding mission: to bridge the vast gap between businesses demanding operational excellence and the reliable, hardworking personnel needed to achieve it.</p>
-      <p>Together, they bring an unwavering commitment to quality. While Anush focuses on strategic growth and statutory compliance, Shilpa spearheads operational efficiency, talent acquisition, and client relations. This dynamic partnership ensures that every client interaction is built on transparency, trust, and accountability, positioning RK Man Power not just as an agency, but as a dedicated growth partner for your enterprise.</p>
-      <div class="cta-line">
-        <a href="tel:+919886284220"><i class="fa-solid fa-phone"></i> Contact the leadership team</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="perspective-container" style="position:relative; overflow:hidden;">
-  <div class="glow-blob" style="top: 20%; left: -20%; background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);"></div>
-  <div class="glow-blob" style="bottom: 10%; right: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
-  <div class="wrap contact-grid" style="position:relative; z-index:1;">
-    <div class="contact-info three3d-element">
-      <div class="eyebrow reveal">Get Started</div>
-      <h2 class="reveal">Ready to scale your workforce?</h2>
-      <p class="reveal">Don't let staffing shortages throttle your business. Contact us today for a free consultation and personalized manpower deployment plan.</p>
-
-      <div class="info-row reveal">
-        <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
-        <div><div class="lbl">Call Us 24/7</div><a class="val" href="tel:+919886284220">+91 9886284220</a></div>
-      </div>
-      <div class="info-row reveal">
-        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div><div class="lbl">Email Us</div><a class="val" href="mailto:rkmanpowerservices@outlook.com" style="font-size:15px;">rkmanpowerservices@outlook.com</a></div>
-      </div>
-      <div class="info-row reveal">
-        <div class="info-icon"><i class="fa-solid fa-user-tie"></i></div>
-        <div><div class="lbl">Founder</div><div class="val">Anush R</div></div>
-      </div>
-      <div class="info-row reveal">
-        <div class="info-icon"><i class="fa-solid fa-user-tie"></i></div>
-        <div><div class="lbl">Co-Founder</div><div class="val">Shilpa N</div></div>
-      </div>
-    </div>
-
-    <div class="form-panel glass three3d-element">
-      <h3>Request manpower pricing</h3>
-      <form id="quoteForm" novalidate>
-        <div id="formStatus"></div>
-        <div class="row2">
-          <div class="field">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" placeholder="John Doe" required>
-            <p class="err" id="nameError">Please enter a valid name.</p>
-          </div>
-          <div class="field">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="+91 9886284220" required>
-            <p class="err" id="phoneError">Enter a valid 10-digit Indian phone number.</p>
+      <div class="svc-grid">
+        <div class="svc-card glass three3d-element">
+          <div class="svc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Security & Surveillance</h3>
+          <p>Advanced asset protection. We provide ex-military guards, corporate bouncers, and perimeter security
+            trained in fire-safety, CCTV monitoring, and crisis management.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Armed & Unarmed</span>
+            <span class="svc-tag">Fire Safety Drills</span>
           </div>
         </div>
-        <div class="field">
-          <label for="service">Service Required</label>
-          <select id="service" required>
-            <option value="" disabled selected>Select a service...</option>
-            <option value="security">Security Solutions</option>
-            <option value="housekeeping">Housekeeping & Janitorial</option>
-            <option value="corporate">Corporate Support Staff</option>
-            <option value="industrial">Industrial & Factory Labor</option>
-            <option value="facility">Facility Management</option>
-            <option value="event">Event Staffing</option>
-            <option value="other">Other</option>
-          </select>
-          <p class="err" id="serviceError">Please select a service.</p>
+        <div class="svc-card glass three3d-element">
+          <div class="svc-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Mechanized Housekeeping</h3>
+          <p>Elevating hygiene standards. Our staff is trained in color-coded cleaning, infection control (hospital
+            grade), and the use of eco-friendly, non-hazardous chemicals.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Green Chemicals</span>
+            <span class="svc-tag">Deep Cleaning</span>
+          </div>
         </div>
-        <div class="field">
-          <label for="message">Message / Specific Requirements</label>
-          <textarea id="message" rows="4" placeholder="Tell us about your business needs..." required></textarea>
-          <p class="err" id="messageError">Message must be at least 10 characters.</p>
+        <div class="svc-card glass three3d-element">
+          <div class="svc-icon"><i class="fa-solid fa-laptop-file"></i></div>
+          <h3>Corporate & Office Staff</h3>
+          <p>The operational backbone of modern offices. We source bilingual receptionists, data entry operators, and
+            discreet office assistants trained in corporate etiquette.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">POSH Trained</span>
+            <span class="svc-tag">Strict NDAs</span>
+          </div>
         </div>
-        <button type="submit" id="submitBtn" class="submit-btn">
-          <span id="btnText">Get Your Free Quote Now</span>
-          <i id="btnIcon" class="fa-solid fa-arrow-right"></i>
-          <i id="btnSpinner" class="fa-solid fa-circle-notch fa-spin" style="display:none;"></i>
-        </button>
-        <p class="privacy-note">We respect your privacy. No spam, ever.</p>
-      </form>
+        <div class="svc-card glass three3d-element">
+          <div class="svc-icon"><i class="fa-solid fa-industry"></i></div>
+          <h3>Industrial & Logistics Labor</h3>
+          <p>Scale your output seamlessly. Providing skilled and semi-skilled labor for manufacturing units, warehouse
+            inventory, loading/unloading, and assembly lines.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Factory Act Compliant</span>
+            <span class="svc-tag">Shift Management</span>
+          </div>
+        </div>
+        <div class="svc-card glass three3d-element">
+          <div class="svc-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Technical Facility Mgt.</h3>
+          <p>Preventative maintenance that saves costs. Access our verified network of certified electricians, HVAC
+            technicians, plumbers, and multi-skilled handymen.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Certified Technicians</span>
+            <span class="svc-tag">Preventative Audits</span>
+          </div>
+        </div>
+        <div class="svc-card glass three3d-element">
+          <div class="svc-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+          <h3>Event & Crowd Control</h3>
+          <p>Flawless execution for high-density environments. Supplying valet drivers, authoritative crowd controllers,
+            and VIP escorts for corporate and private events.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Rapid Deployment</span>
+            <span class="svc-tag">Radio Communication</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <p>&copy; 2026 <span class="brand-mini">RK Man Power Service</span>. All rights reserved.</p>
-    <p style="margin-top:6px;">Founder: Anush R | Co-Founder: Shilpa N | Trusted Staffing Solutions across India.</p>
-  </div>
-</footer>
+  <!-- NEW SECTION: Process -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom: 48px;">
+        <div class="eyebrow">Our Methodology</div>
+        <h2>How We Deploy Talent</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <div class="step-num">01</div>
+          <h4>Site Audit & Discovery</h4>
+          <p>We analyze your facility's specific layout, risk factors, and manpower gaps to create a customized SLA.</p>
+        </div>
+        <div class="process-card reveal">
+          <div class="step-num">02</div>
+          <h4>Strict Vetting</h4>
+          <p>Comprehensive background checks, police verification, and psychological profiling for every candidate.</p>
+        </div>
+        <div class="process-card reveal">
+          <div class="step-num">03</div>
+          <h4>Domain Training</h4>
+          <p>Personnel undergo rigorous training in corporate etiquette, safety protocols, and domain-specific tools.
+          </p>
+        </div>
+        <div class="process-card reveal">
+          <div class="step-num">04</div>
+          <h4>Deployment & App Tracking</h4>
+          <p>Seamless onboarding with geofenced biometric attendance and a dedicated 24/7 account manager.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+  <section id="why" class="perspective-container" style="position:relative; overflow:hidden;">
+    <div class="glow-blob"
+      style="top: 20%; right: -15%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+    <div class="wrap why-grid" style="position:relative; z-index:1;">
+      <div>
+        <div class="eyebrow reveal">The RK Advantage</div>
+        <h2 style="font-size:clamp(26px,3.6vw,38px);color:#fff;margin:14px 0 18px;font-weight:600;" class="reveal">Built
+          for Corporate Compliance and Scale</h2>
+        <p style="color:var(--ink-dim);font-size:15.5px;line-height:1.7;font-weight:300;margin-bottom:8px;"
+          class="reveal">In today's regulatory landscape, manpower isn't just about headcounts—it's about compliance,
+          reliability, and mitigating legal risks. Here is how we protect your business.</p>
 
-  /* ================= DUST / FLOODLIGHT PARTICLE CANVAS ================= */
-  const canvas = document.getElementById('dust-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        <div class="why-item reveal">
+          <div class="why-badge"><i class="fa-solid fa-fingerprint"></i></div>
+          <div>
+            <h4>Tech-Enabled Attendance</h4>
+            <p>Say goodbye to proxy attendances. We utilize geofenced app tracking and biometric systems for transparent
+              billing and absolute accountability.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-badge"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div>
+            <h4>100% Statutory Compliance</h4>
+            <p>We absorb your legal liabilities. RK Man Power adheres strictly to Minimum Wages, PF, ESI, Bonus Acts,
+              and continuous labor law updates.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-badge"><i class="fa-solid fa-rotate"></i></div>
+          <div>
+            <h4>Zero-Downtime Guarantee</h4>
+            <p>Absenteeism shouldn't stall your operations. We maintain a robust bench strength to provide immediate
+              replacements within hours.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-badge"><i class="fa-solid fa-user-shield"></i></div>
+          <div>
+            <h4>Specialized Certifications</h4>
+            <p>From POSH (Prevention of Sexual Harassment) sensitization to OSHA-aligned factory safety guidelines, our
+              staff is pre-certified for modern work environments.</p>
+          </div>
+        </div>
+      </div>
 
-  function resize(){
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-  function initParticles(){
-    const count = window.innerWidth < 700 ? 40 : 90;
-    particles = Array.from({length:count}, () => ({
-      x: Math.random()*W, y: Math.random()*H,
-      r: Math.random()*1.6+0.4,
-      vy: -(Math.random()*0.25+0.05),
-      vx: (Math.random()-0.5)*0.15,
-      a: Math.random()*0.5+0.15
-    }));
-  }
-  function tick(){
-    ctx.clearRect(0,0,W,H);
-    ctx.fillStyle = 'rgba(255,178,90,1)';
-    particles.forEach(p=>{
-      p.x += p.vx; p.y += p.vy;
-      if(p.y < -5) { p.y = H+5; p.x = Math.random()*W; }
-      if(p.x < -5) p.x = W+5;
-      if(p.x > W+5) p.x = -5;
-      ctx.globalAlpha = p.a;
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fill();
-    });
-    ctx.globalAlpha = 1;
-    if(!prefersReduced) requestAnimationFrame(tick);
-  }
-  resize(); initParticles();
-  if(!prefersReduced) tick(); else { tick(); }
-  window.addEventListener('resize', ()=>{resize(); initParticles();});
+      <div class="why-visual three3d-element">
+        <img
+          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="Professional staffing">
+        <div class="scan"></div>
+        <div class="stat-plate glass">
+          <div>
+            <div class="num" data-val="100" style="display:inline-block">0</div><span
+              style="font-family:'Oswald';font-size:38px;color:var(--amber);font-weight:600;">%</span>
+            <div class="lbl">Legal & Verification Guarantee</div>
+          </div>
+          <i class="fa-solid fa-file-contract" style="font-size: 32px; color: var(--cyan); opacity: 0.8;"></i>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  /* floodlight beam follows cursor */
-  const beam = document.getElementById('beam');
-  const heroEl = document.querySelector('.hero');
-  heroEl.addEventListener('mousemove', (e)=>{
-    const rect = heroEl.getBoundingClientRect();
-    const mx = ((e.clientX - rect.left)/rect.width*100).toFixed(1);
-    const my = ((e.clientY - rect.top)/rect.height*100).toFixed(1);
-    beam.style.setProperty('--mx', mx+'%');
-    beam.style.setProperty('--my', my+'%');
-  });
+  <!-- NEW SECTION: Testimonials -->
+  <section id="testimonials" class="perspective-container">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Client Success</div>
+        <h2>Trusted by Industry Leaders</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card glass reveal">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"RK Man Power overhauled our IT park's security detail. The transition was seamless, the guards are
+            exceptionally trained in fire safety, and their management handles PF/ESI without us ever having to chase
+            them."</p>
+          <div class="client-info">
+            <div class="client-avatar">V</div>
+            <div class="client-details">
+              <h5>Vikram D.</h5>
+              <span>Facility Manager, Manyatha Tech Park</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card glass reveal">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"We rely on RK for our warehouse loading and sorting labor. Their ability to manage shift rotations and
+            immediately replace absentees has increased our daily dispatch efficiency by 20%."</p>
+          <div class="client-info">
+            <div class="client-avatar">S</div>
+            <div class="client-details">
+              <h5>Siddharth M.</h5>
+              <span>Logistics & Supply Head</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card glass reveal">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Their housekeeping staff's attention to detail is unmatched. They use proper color-coded cleaning supplies
+            and maintain exceptional hygiene across our corporate hospital network."</p>
+          <div class="client-info">
+            <div class="client-avatar">P</div>
+            <div class="client-details">
+              <h5>Priya K.</h5>
+              <span>Operation Head, Apollo Hospitals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  /* ================= LENIS SMOOTH SCROLL ================= */
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
-  });
+  <section id="about" class="perspective-container" style="position:relative; overflow:hidden;">
+    <div class="glow-blob"
+      style="top: 40%; left: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+    <div class="wrap" style="text-align:center; position:relative; z-index:1;">
+      <div class="eyebrow reveal" style="justify-content:center;">Leadership</div>
+      <h2 style="font-size:clamp(26px,3.6vw,38px);color:#fff;margin:14px 0 34px;font-weight:600;" class="reveal">Meet
+        the Leadership</h2>
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+      <div class="founders">
+        <div class="founder-card glass three3d-element">
+          <div class="avatar">AR</div>
+          <h4>Anush R</h4>
+          <span>Founder & Director</span>
+        </div>
+        <div class="founder-card glass three3d-element">
+          <div class="avatar">SN</div>
+          <h4>Shilpa N</h4>
+          <span>Co-Founder & Head of Ops</span>
+        </div>
+      </div>
 
-  // Link Lenis to GSAP ScrollTrigger
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-  gsap.ticker.lagSmoothing(0);
+      <div class="quote-panel glass reveal">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>Under the visionary leadership of <strong>Anush R</strong> and <strong>Shilpa N</strong>, RK Man Power
+          Service was established with a singular, unyielding mission: to elevate the unorganized manpower sector into a
+          structured, highly compliant, and technology-driven corporate service.</p>
+        <p>Together, they bring an unwavering commitment to quality. Anush focuses on strategic growth, legal
+          frameworks, and statutory compliance, ensuring clients face zero regulatory risk. Shilpa spearheads
+          operational efficiency, talent acquisition, psychological vetting, and client relations. This dynamic
+          partnership ensures that RK Man Power acts not just as a staffing agency, but as an indispensable growth
+          partner for your enterprise.</p>
+        <div class="cta-line">
+          <a href="tel:+919886284220"><i class="fa-solid fa-phone"></i> Schedule a meeting with leadership</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  /* ================= HERO HEADLINE WORD-BY-WORD REVEAL ================= */
-  const headline = document.getElementById('headline');
-  const walker = document.createTreeWalker(headline, NodeFilter.SHOW_TEXT, null);
-  const textNodes = [];
-  let n; while(n = walker.nextNode()) textNodes.push(n);
-  textNodes.forEach(node=>{
-    const frag = document.createDocumentFragment();
-    node.textContent.split(' ').forEach((w,i,arr)=>{
-      if(w==='') return;
-      const span = document.createElement('span');
-      span.className='word';
-      span.textContent = w + (i<arr.length-1?'\u00A0':'');
-      frag.appendChild(span);
-    });
-    node.parentNode.replaceChild(frag, node);
-  });
+  <section id="contact" class="perspective-container" style="position:relative; overflow:hidden;">
+    <div class="glow-blob"
+      style="top: 20%; left: -20%; background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);"></div>
+    <div class="glow-blob"
+      style="bottom: 10%; right: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+    <div class="wrap contact-grid" style="position:relative; z-index:1;">
+      <div class="contact-info three3d-element">
+        <div class="eyebrow reveal">Get Started</div>
+        <h2 class="reveal">Secure Your Operations Today</h2>
+        <p class="reveal">Stop letting staffing shortages and non-compliant agencies put your business at risk. Contact
+          us for a free site audit and personalized SLA proposal.</p>
 
-  // Set 3D roll-in parameters
-  gsap.set('.headline .word', { 
-    rotateX: -80, 
-    opacity: 0, 
-    y: 35, 
-    transformPerspective: 1000, 
-    transformOrigin: "50% 50% -30px" 
-  });
+        <div class="info-row reveal">
+          <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+          <div>
+            <div class="lbl">24/7 Dispatch & Support</div><a class="val" href="tel:+919886284220">+91 9886284220</a>
+          </div>
+        </div>
+        <div class="info-row reveal">
+          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="lbl">Corporate Inquiries</div><a class="val" href="mailto:rkmanpowerservices@outlook.com"
+              style="font-size:15px;">rkmanpowerservices@outlook.com</a>
+          </div>
+        </div>
+        <div class="info-row reveal">
+          <div class="info-icon"><i class="fa-solid fa-building-shield"></i></div>
+          <div>
+            <div class="lbl">Coverage</div>
+            <div class="val">Available Across India</div>
+          </div>
+        </div>
+      </div>
 
-  gsap.to('.headline .word', {
-    opacity: 1, 
-    y: 0, 
-    rotateX: 0,
-    duration: 1.0, 
-    stagger: 0.045, 
-    ease: 'back.out(1.4)', 
-    delay: 0.2
-  });
-  gsap.from('.hero-sub, .hero-ctas', {opacity:0, y:20, duration:0.9, delay:0.9, stagger:0.15, ease:'power2.out'});
-  gsap.from('.eyebrow', {opacity:0, y:10, duration:0.7, delay:0.05});
+      <div class="form-panel glass three3d-element">
+        <h3>Request a Custom Proposal</h3>
+        <form id="quoteForm" novalidate>
+          <div id="formStatus"></div>
+          <div class="row2">
+            <div class="field">
+              <label for="fullName">Contact Name</label>
+              <input type="text" id="fullName" placeholder="e.g. John Doe" required>
+              <p class="err" id="nameError">Please enter a valid name.</p>
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+91 9886284220" required>
+              <p class="err" id="phoneError">Enter a valid 10-digit number.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Primary Requirement</label>
+            <select id="service" required>
+              <option value="" disabled selected>Select service category...</option>
+              <option value="security">Security & Surveillance</option>
+              <option value="housekeeping">Mechanized Housekeeping</option>
+              <option value="corporate">Corporate / Office Staff</option>
+              <option value="industrial">Industrial / Warehouse Labor</option>
+              <option value="facility">Technical Facility Management</option>
+              <option value="event">Event Staffing</option>
+              <option value="audit">Request Compliance Audit</option>
+            </select>
+            <p class="err" id="serviceError">Please select a service.</p>
+          </div>
+          <div class="field">
+            <label for="message">Specific Requirements / Manpower Count</label>
+            <textarea id="message" rows="4"
+              placeholder="Briefly describe your facility size and how many personnel you need..." required></textarea>
+            <p class="err" id="messageError">Message must be at least 10 characters.</p>
+          </div>
+          <button type="submit" id="submitBtn" class="submit-btn">
+            <span id="btnText">Get Your Free Proposal</span>
+            <i id="btnIcon" class="fa-solid fa-arrow-right"></i>
+            <i id="btnSpinner" class="fa-solid fa-circle-notch fa-spin" style="display:none;"></i>
+          </button>
+          <p class="privacy-note"><i class="fa-solid fa-lock" style="font-size:10px;"></i> Your data is encrypted and
+            completely confidential.</p>
+        </form>
+      </div>
+    </div>
+  </section>
 
-  /* ================= MAGNETIC BUTTONS ================= */
-  document.querySelectorAll('.magnetic').forEach(btn=>{
-    btn.addEventListener('mousemove', (e)=>{
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width/2;
-      const y = e.clientY - r.top - r.height/2;
-      btn.style.transform = `translate(${x*0.25}px, ${y*0.35}px)`;
-    });
-    btn.addEventListener('mouseleave', ()=>{ btn.style.transform='translate(0,0)'; });
-  });
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 <span class="brand-mini">RK Man Power Service</span>. All rights reserved.</p>
+      <p style="margin-top:6px;">ISO aligned practices | 100% PF/ESI Compliant | Servicing Pan-India.</p>
+    </div>
+  </footer>
 
-  /* ================= SCROLL REVEALS ================= */
-  gsap.registerPlugin(ScrollTrigger);
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
 
-  // Generic fade/slide-up reveal for elements
-  gsap.utils.toArray('.reveal').forEach((el,i)=>{
-    gsap.to(el, {
-      opacity:1, y:0, duration:0.8, ease:'power2.out',
-      scrollTrigger:{ trigger: el, start:'top 88%' }
-    });
-  });
+      /* ================= DUST / FLOODLIGHT PARTICLE CANVAS ================= */
+      const canvas = document.getElementById('dust-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ================= SERVICES 3D STAGGER ENTRANCE ================= */
-  gsap.set('#services .three3d-element', {
-    opacity: 0,
-    y: 80,
-    rotateX: 25,
-    rotateY: -15,
-    transformPerspective: 1200,
-    transformOrigin: "center top"
-  });
-
-  gsap.to('#services .three3d-element', {
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
-    rotateY: 0,
-    duration: 1.2,
-    stagger: 0.1,
-    ease: 'power4.out',
-    scrollTrigger: {
-      trigger: '#services .svc-grid',
-      start: 'top 80%',
-    }
-  });
-
-  /* card tilt on hover (updated for smoother GSAP animations) */
-  document.querySelectorAll('.svc-card').forEach(card=>{
-    card.addEventListener('mousemove', e=>{
-      const r = card.getBoundingClientRect();
-      const rx = ((e.clientY - r.top)/r.height - 0.5) * -12;
-      const ry = ((e.clientX - r.left)/r.width - 0.5) * 12;
-      gsap.to(card, {
-        rotateX: rx,
-        rotateY: ry,
-        y: -6,
-        duration: 0.3,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
-    card.addEventListener('mouseleave', ()=>{ 
-      gsap.to(card, {
-        rotateX: 0,
-        rotateY: 0,
-        y: 0,
-        duration: 0.5,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
-  });
-
-  /* ================= WHY US 3D PARALLAX & TILT ================= */
-  gsap.set('.why-visual', {
-    opacity: 0,
-    scale: 0.9,
-    rotateY: 15,
-    rotateX: 10,
-    transformPerspective: 1200
-  });
-
-  gsap.to('.why-visual', {
-    opacity: 1,
-    scale: 1,
-    rotateY: 0,
-    rotateX: 0,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.why-visual',
-      start: 'top 80%',
-    }
-  });
-
-  // Parallax translation inside the image
-  gsap.set('.why-visual img', { scale: 1.18 });
-  gsap.to('.why-visual img', {
-    yPercent: 8,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.why-visual',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  // Parallax float on the stat-plate
-  gsap.to('.stat-plate', {
-    yPercent: -20,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.why-visual',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  /* ================= FOUNDER CARDS 3D FLIP ================= */
-  gsap.set('.founders .three3d-element', {
-    opacity: 0,
-    rotateY: 85,
-    scale: 0.9,
-    transformPerspective: 1200
-  });
-
-  gsap.to('.founders .three3d-element', {
-    opacity: 1,
-    rotateY: 0,
-    scale: 1,
-    duration: 1.2,
-    stagger: 0.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.founders',
-      start: 'top 85%',
-    }
-  });
-
-  /* ================= CONTACT INFO & FORM 3D ENTRANCE ================= */
-  gsap.set('#contact .contact-info', {
-    opacity: 0,
-    x: -80,
-    rotateY: 15,
-    transformPerspective: 1200,
-    transformOrigin: "left center"
-  });
-
-  gsap.to('#contact .contact-info', {
-    opacity: 1,
-    x: 0,
-    rotateY: 0,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#contact',
-      start: 'top 75%',
-    }
-  });
-
-  gsap.set('#contact .form-panel', {
-    opacity: 0,
-    x: 80,
-    rotateY: -15,
-    transformPerspective: 1200,
-    transformOrigin: "right center"
-  });
-
-  gsap.to('#contact .form-panel', {
-    opacity: 1,
-    x: 0,
-    rotateY: 0,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#contact',
-      start: 'top 75%',
-    }
-  });
-
-  /* ================= GLOW BLOBS DYNAMIC DRIFT ================= */
-  gsap.utils.toArray('.glow-blob').forEach((blob, i) => {
-    gsap.to(blob, {
-      y: (i % 2 === 0 ? 100 : -100),
-      x: (i % 2 === 0 ? 40 : -40),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: blob.parentNode,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
       }
-    });
-  });
+      function initParticles() {
+        const count = window.innerWidth < 700 ? 40 : 90;
+        particles = Array.from({ length: count }, () => ({
+          x: Math.random() * W, y: Math.random() * H,
+          r: Math.random() * 1.6 + 0.4,
+          vy: -(Math.random() * 0.25 + 0.05),
+          vx: (Math.random() - 0.5) * 0.15,
+          a: Math.random() * 0.5 + 0.15
+        }));
+      }
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+        ctx.fillStyle = 'rgba(255,178,90,1)';
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.y < -5) { p.y = H + 5; p.x = Math.random() * W; }
+          if (p.x < -5) p.x = W + 5;
+          if (p.x > W + 5) p.x = -5;
+          ctx.globalAlpha = p.a;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+        if (!prefersReduced) requestAnimationFrame(tick);
+      }
+      resize(); initParticles();
+      if (!prefersReduced) tick(); else { tick(); }
+      window.addEventListener('resize', () => { resize(); initParticles(); });
 
-  /* counter */
-  const counter = document.querySelector('[data-count]');
-  if(counter){
-    ScrollTrigger.create({
-      trigger: counter, start:'top 85%',
-      onEnter: ()=>{
-        const target = parseInt(counter.dataset.count,10);
-        let val = {n:0};
-        gsap.to(val, { n:target, duration:1.4, ease:'power2.out', onUpdate:()=>{
-          counter.textContent = Math.round(val.n) + '%';
-        }});
-      }, once:true
-    });
-  }
-
-  /* ==========================================
-     FORM SUBMISSION LOGIC (unchanged behavior)
-     ========================================== */
-  const form = document.getElementById("quoteForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const btnText = document.getElementById("btnText");
-  const btnIcon = document.getElementById("btnIcon");
-  const btnSpinner = document.getElementById("btnSpinner");
-  const formStatus = document.getElementById("formStatus");
-
-  const sanitizeInput = (str) => str.replace(/[&<>'"]/g,
-    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-  );
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    document.querySelectorAll(".err").forEach(el => el.style.display = "none");
-    formStatus.className = ""; formStatus.style.display = "none";
-
-    const fullName = sanitizeInput(document.getElementById("fullName").value.trim());
-    const phone = sanitizeInput(document.getElementById("phone").value.trim());
-    const service = sanitizeInput(document.getElementById("service").value.trim());
-    const message = sanitizeInput(document.getElementById("message").value.trim());
-
-    let isValid = true;
-
-    if (fullName.length < 2) { document.getElementById("nameError").style.display = "block"; isValid = false; }
-
-    const phoneRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
-    if (!phoneRegex.test(phone)) { document.getElementById("phoneError").style.display = "block"; isValid = false; }
-
-    if (service === "") { document.getElementById("serviceError").style.display = "block"; isValid = false; }
-
-    if (message.length < 10) { document.getElementById("messageError").style.display = "block"; isValid = false; }
-
-    if (!isValid) return;
-
-    btnText.textContent = "Sending Details...";
-    btnIcon.style.display = "none";
-    btnSpinner.style.display = "inline-block";
-    submitBtn.disabled = true;
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          access_key: "d60ca930-da99-4261-ad41-631a8ee48869",
-          subject: `New Manpower Request from ${fullName}`,
-          from_name: "RK Man Power Website",
-          Name: fullName,
-          Phone_Number: phone,
-          Service_Required: service,
-          Message: message
-        })
+      /* floodlight beam follows cursor */
+      const beam = document.getElementById('beam');
+      const heroEl = document.querySelector('.hero');
+      heroEl.addEventListener('mousemove', (e) => {
+        const rect = heroEl.getBoundingClientRect();
+        const mx = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+        const my = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+        beam.style.setProperty('--mx', mx + '%');
+        beam.style.setProperty('--my', my + '%');
       });
 
-      const result = await response.json();
+      /* ================= LENIS SMOOTH SCROLL ================= */
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+      });
 
-      if (response.status === 200) {
-        formStatus.textContent = "Thank you! Your details have been sent to our team.";
-        formStatus.className = "ok";
-        formStatus.style.display = "block";
-        form.reset();
-      } else {
-        throw new Error(result.message);
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
       }
-    } catch (error) {
-      console.error(error);
-      formStatus.textContent = "Failed to send message. Please email us directly at rkmanpowerservices@outlook.com";
-      formStatus.className = "bad";
-      formStatus.style.display = "block";
-    } finally {
-      btnText.textContent = "Get Your Free Quote Now";
-      btnIcon.style.display = "inline-block";
-      btnSpinner.style.display = "none";
-      submitBtn.disabled = false;
-    }
-  });
+      requestAnimationFrame(raf);
 
-});
-</script>
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      /* ================= HERO HEADLINE WORD-BY-WORD REVEAL ================= */
+      const headline = document.getElementById('headline');
+      const walker = document.createTreeWalker(headline, NodeFilter.SHOW_TEXT, null);
+      const textNodes = [];
+      let n; while (n = walker.nextNode()) textNodes.push(n);
+      textNodes.forEach(node => {
+        const frag = document.createDocumentFragment();
+        node.textContent.split(' ').forEach((w, i, arr) => {
+          if (w === '') return;
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = w + (i < arr.length - 1 ? '\u00A0' : '');
+          frag.appendChild(span);
+        });
+        node.parentNode.replaceChild(frag, node);
+      });
+
+      gsap.set('.headline .word', { rotateX: -80, opacity: 0, y: 35, transformPerspective: 1000, transformOrigin: "50% 50% -30px" });
+      gsap.to('.headline .word', { opacity: 1, y: 0, rotateX: 0, duration: 1.0, stagger: 0.045, ease: 'back.out(1.4)', delay: 0.2 });
+      gsap.from('.hero-sub, .hero-ctas', { opacity: 0, y: 20, duration: 0.9, delay: 0.9, stagger: 0.15, ease: 'power2.out' });
+      gsap.from('.eyebrow', { opacity: 0, y: 10, duration: 0.7, delay: 0.05 });
+
+      /* ================= COUNTERS ANIMATION (New additions) ================= */
+      const countElements = document.querySelectorAll('[data-val]');
+      countElements.forEach(el => {
+        ScrollTrigger.create({
+          trigger: el, start: 'top 90%',
+          onEnter: () => {
+            const target = parseInt(el.dataset.val, 10);
+            let val = { n: 0 };
+            gsap.to(val, {
+              n: target, duration: 2, ease: 'power2.out',
+              onUpdate: () => { el.childNodes[0].nodeValue = Math.round(val.n); }
+            });
+          }, once: true
+        });
+      });
+
+      /* ================= MAGNETIC BUTTONS ================= */
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const x = e.clientX - r.left - r.width / 2;
+          const y = e.clientY - r.top - r.height / 2;
+          btn.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
+      });
+
+      /* ================= SCROLL REVEALS ================= */
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray('.reveal').forEach((el, i) => {
+        gsap.to(el, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+      });
+
+      /* ================= 3D STAGGER ENTRANCES ================= */
+      const init3DReveal = (selector, trigger, y, rotX, rotY) => {
+        gsap.set(selector, { opacity: 0, y: y, rotateX: rotX, rotateY: rotY, transformPerspective: 1200 });
+        gsap.to(selector, {
+          opacity: 1, y: 0, rotateX: 0, rotateY: 0, duration: 1.2, stagger: 0.15, ease: 'power4.out',
+          scrollTrigger: { trigger: trigger, start: 'top 85%' }
+        });
+      };
+
+      init3DReveal('#services .three3d-element', '#services .svc-grid', 80, 25, -15);
+      init3DReveal('.founders .three3d-element', '.founders', 0, 0, 85);
+
+      /* card tilt on hover */
+      document.querySelectorAll('.svc-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const rx = ((e.clientY - r.top) / r.height - 0.5) * -12;
+          const ry = ((e.clientX - r.left) / r.width - 0.5) * 12;
+          gsap.to(card, { rotateX: rx, rotateY: ry, y: -6, duration: 0.3, ease: 'power2.out', overwrite: 'auto' });
+        });
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, { rotateX: 0, rotateY: 0, y: 0, duration: 0.5, ease: 'power2.out', overwrite: 'auto' });
+        });
+      });
+
+      /* ================= WHY US 3D PARALLAX & TILT ================= */
+      gsap.set('.why-visual', { opacity: 0, scale: 0.9, rotateY: 15, rotateX: 10, transformPerspective: 1200 });
+      gsap.to('.why-visual', {
+        opacity: 1, scale: 1, rotateY: 0, rotateX: 0, duration: 1.2, ease: 'power3.out',
+        scrollTrigger: { trigger: '.why-visual', start: 'top 80%' }
+      });
+      gsap.set('.why-visual img', { scale: 1.18 });
+      gsap.to('.why-visual img', {
+        yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.why-visual', start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+      gsap.to('.stat-plate', {
+        yPercent: -20, ease: 'none', scrollTrigger: { trigger: '.why-visual', start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+
+      /* ================= GLOW BLOBS DYNAMIC DRIFT ================= */
+      gsap.utils.toArray('.glow-blob').forEach((blob, i) => {
+        gsap.to(blob, {
+          y: (i % 2 === 0 ? 100 : -100), x: (i % 2 === 0 ? 40 : -40), ease: 'none',
+          scrollTrigger: { trigger: blob.parentNode, start: 'top bottom', end: 'bottom top', scrub: true }
+        });
+      });
+
+      /* ================= CONTACT INFO & FORM 3D ENTRANCE ================= */
+      gsap.set('#contact .contact-info', { opacity: 0, x: -80, rotateY: 15, transformPerspective: 1200, transformOrigin: "left center" });
+      gsap.to('#contact .contact-info', { opacity: 1, x: 0, rotateY: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '#contact', start: 'top 75%' } });
+
+      gsap.set('#contact .form-panel', { opacity: 0, x: 80, rotateY: -15, transformPerspective: 1200, transformOrigin: "right center" });
+      gsap.to('#contact .form-panel', { opacity: 1, x: 0, rotateY: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '#contact', start: 'top 75%' } });
+
+      /* ==========================================
+         FORM SUBMISSION LOGIC
+         ========================================== */
+      const form = document.getElementById("quoteForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const btnText = document.getElementById("btnText");
+      const btnIcon = document.getElementById("btnIcon");
+      const btnSpinner = document.getElementById("btnSpinner");
+      const formStatus = document.getElementById("formStatus");
+
+      const sanitizeInput = (str) => str.replace(/[&<>'"]/g,
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        document.querySelectorAll(".err").forEach(el => el.style.display = "none");
+        formStatus.className = ""; formStatus.style.display = "none";
+
+        const fullName = sanitizeInput(document.getElementById("fullName").value.trim());
+        const phone = sanitizeInput(document.getElementById("phone").value.trim());
+        const service = sanitizeInput(document.getElementById("service").value.trim());
+        const message = sanitizeInput(document.getElementById("message").value.trim());
+
+        let isValid = true;
+
+        if (fullName.length < 2) { document.getElementById("nameError").style.display = "block"; isValid = false; }
+        const phoneRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
+        if (!phoneRegex.test(phone)) { document.getElementById("phoneError").style.display = "block"; isValid = false; }
+        if (service === "") { document.getElementById("serviceError").style.display = "block"; isValid = false; }
+        if (message.length < 10) { document.getElementById("messageError").style.display = "block"; isValid = false; }
+
+        if (!isValid) return;
+
+        btnText.textContent = "Processing Proposal...";
+        btnIcon.style.display = "none";
+        btnSpinner.style.display = "inline-block";
+        submitBtn.disabled = true;
+
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+              access_key: "d60ca930-da99-4261-ad41-631a8ee48869",
+              subject: `New Corporate SLA Request from ${fullName}`,
+              from_name: "RK Man Power Portal",
+              Name: fullName,
+              Phone_Number: phone,
+              Service_Category: service,
+              Requirement_Details: message
+            })
+          });
+
+          const result = await response.json();
+
+          if (response.status === 200) {
+            formStatus.textContent = "Thank you! Our operations team will contact you shortly with a proposal.";
+            formStatus.className = "ok";
+            formStatus.style.display = "block";
+            form.reset();
+          } else {
+            throw new Error(result.message);
+          }
+        } catch (error) {
+          console.error(error);
+          formStatus.textContent = "Failed to send request. Please email us directly at rkmanpowerservices@outlook.com";
+          formStatus.className = "bad";
+          formStatus.style.display = "block";
+        } finally {
+          btnText.textContent = "Get Your Free Proposal";
+          btnIcon.style.display = "inline-block";
+          btnSpinner.style.display = "none";
+          submitBtn.disabled = false;
+        }
+      });
+
+    });
+  </script>
 </body>
+
 </html>
