@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
 <style>
   :root{
@@ -275,6 +277,46 @@
 
   /* reveal helper */
   .reveal{opacity:0;transform:translateY(26px);}
+
+  /* Lenis smooth scroll recommended styles */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  /* 3D and floating glow effects */
+  .perspective-container {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+  .three3d-element {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+  .glow-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(140px);
+    opacity: 0.12;
+    mix-blend-mode: screen;
+    will-change: transform;
+  }
 </style>
 </head>
 <body>
@@ -307,40 +349,42 @@
   <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
 </header>
 
-<section id="services">
-  <div class="wrap">
+<section id="services" class="perspective-container" style="position:relative; overflow:hidden;">
+  <div class="glow-blob" style="top: 10%; left: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+  <div class="glow-blob" style="bottom: 10%; right: -20%; background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);"></div>
+  <div class="wrap" style="position:relative; z-index:1;">
     <div class="section-head reveal">
       <div class="eyebrow">What We Deploy</div>
       <h2>Comprehensive manpower solutions</h2>
       <p>Tailored personnel deployments designed to keep your business running seamlessly.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card glass reveal">
+      <div class="svc-card glass three3d-element">
         <div class="svc-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <h3>Security Solutions</h3>
         <p>Protecting your assets with uncompromising vigilance. We provide corporate security, residential guards, armed/unarmed personnel, event bouncers, and VIP protection details.</p>
       </div>
-      <div class="svc-card glass reveal">
+      <div class="svc-card glass three3d-element">
         <div class="svc-icon"><i class="fa-solid fa-broom"></i></div>
         <h3>Housekeeping & Janitorial</h3>
         <p>Pristine environments drive productivity. Our services include commercial office cleaning, residential maintenance, specialized deep cleaning, and efficient pantry management.</p>
       </div>
-      <div class="svc-card glass reveal">
+      <div class="svc-card glass three3d-element">
         <div class="svc-icon"><i class="fa-solid fa-briefcase"></i></div>
         <h3>Corporate Support Staff</h3>
         <p>The backbone of your daily operations. We supply polished receptionists, accurate data entry operators, dependable office boys, and organized administrative assistants.</p>
       </div>
-      <div class="svc-card glass reveal">
+      <div class="svc-card glass three3d-element">
         <div class="svc-icon"><i class="fa-solid fa-industry"></i></div>
         <h3>Industrial & Factory Labor</h3>
         <p>Scale your output with confidence. We deploy skilled, semi-skilled, and unskilled workforce segments specialized for manufacturing, assembly lines, and warehouse management.</p>
       </div>
-      <div class="svc-card glass reveal">
+      <div class="svc-card glass three3d-element">
         <div class="svc-icon"><i class="fa-solid fa-toolbox"></i></div>
         <h3>Facility Management</h3>
         <p>Keep your infrastructure running flawlessly. Access our network of on-call electricians, certified plumbers, and proactive general maintenance staff.</p>
       </div>
-      <div class="svc-card glass reveal">
+      <div class="svc-card glass three3d-element">
         <div class="svc-icon"><i class="fa-solid fa-calendar-check"></i></div>
         <h3>Event Staffing</h3>
         <p>Deliver flawless events with our specialized team. We provide courteous valet drivers, authoritative crowd control personnel, and expert event coordinators.</p>
@@ -349,8 +393,9 @@
   </div>
 </section>
 
-<section id="why">
-  <div class="wrap why-grid">
+<section id="why" class="perspective-container" style="position:relative; overflow:hidden;">
+  <div class="glow-blob" style="top: 20%; right: -15%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+  <div class="wrap why-grid" style="position:relative; z-index:1;">
     <div>
       <div class="eyebrow reveal">The RK Standard</div>
       <h2 style="font-size:clamp(26px,3.6vw,38px);color:#fff;margin:14px 0 18px;font-weight:600;" class="reveal">Why RK Man Power is the industry standard</h2>
@@ -374,7 +419,7 @@
       </div>
     </div>
 
-    <div class="why-visual reveal">
+    <div class="why-visual three3d-element">
       <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional staffing">
       <div class="scan"></div>
       <div class="stat-plate glass">
@@ -385,18 +430,19 @@
   </div>
 </section>
 
-<section id="about">
-  <div class="wrap" style="text-align:center;">
+<section id="about" class="perspective-container" style="position:relative; overflow:hidden;">
+  <div class="glow-blob" style="top: 40%; left: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+  <div class="wrap" style="text-align:center; position:relative; z-index:1;">
     <div class="eyebrow reveal" style="justify-content:center;">Leadership</div>
     <h2 style="font-size:clamp(26px,3.6vw,38px);color:#fff;margin:14px 0 34px;font-weight:600;" class="reveal">Meet the leadership</h2>
 
     <div class="founders">
-      <div class="founder-card glass reveal">
+      <div class="founder-card glass three3d-element">
         <div class="avatar">AR</div>
         <h4>Anush R</h4>
         <span>Founder</span>
       </div>
-      <div class="founder-card glass reveal">
+      <div class="founder-card glass three3d-element">
         <div class="avatar">SN</div>
         <h4>Shilpa N</h4>
         <span>Co-Founder</span>
@@ -414,9 +460,11 @@
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap contact-grid">
-    <div class="contact-info">
+<section id="contact" class="perspective-container" style="position:relative; overflow:hidden;">
+  <div class="glow-blob" style="top: 20%; left: -20%; background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);"></div>
+  <div class="glow-blob" style="bottom: 10%; right: -20%; background: radial-gradient(circle, var(--amber) 0%, transparent 70%);"></div>
+  <div class="wrap contact-grid" style="position:relative; z-index:1;">
+    <div class="contact-info three3d-element">
       <div class="eyebrow reveal">Get Started</div>
       <h2 class="reveal">Ready to scale your workforce?</h2>
       <p class="reveal">Don't let staffing shortages throttle your business. Contact us today for a free consultation and personalized manpower deployment plan.</p>
@@ -439,7 +487,7 @@
       </div>
     </div>
 
-    <div class="form-panel glass reveal">
+    <div class="form-panel glass three3d-element">
       <h3>Request manpower pricing</h3>
       <form id="quoteForm" novalidate>
         <div id="formStatus"></div>
@@ -546,6 +594,28 @@ document.addEventListener("DOMContentLoaded", () => {
     beam.style.setProperty('--my', my+'%');
   });
 
+  /* ================= LENIS SMOOTH SCROLL ================= */
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Link Lenis to GSAP ScrollTrigger
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
   /* ================= HERO HEADLINE WORD-BY-WORD REVEAL ================= */
   const headline = document.getElementById('headline');
   const walker = document.createTreeWalker(headline, NodeFilter.SHOW_TEXT, null);
@@ -562,8 +632,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     node.parentNode.replaceChild(frag, node);
   });
+
+  // Set 3D roll-in parameters
+  gsap.set('.headline .word', { 
+    rotateX: -80, 
+    opacity: 0, 
+    y: 35, 
+    transformPerspective: 1000, 
+    transformOrigin: "50% 50% -30px" 
+  });
+
   gsap.to('.headline .word', {
-    opacity:1, y:0, duration:0.8, stagger:0.045, ease:'power3.out', delay:0.2
+    opacity: 1, 
+    y: 0, 
+    rotateX: 0,
+    duration: 1.0, 
+    stagger: 0.045, 
+    ease: 'back.out(1.4)', 
+    delay: 0.2
   });
   gsap.from('.hero-sub, .hero-ctas', {opacity:0, y:20, duration:0.9, delay:0.9, stagger:0.15, ease:'power2.out'});
   gsap.from('.eyebrow', {opacity:0, y:10, duration:0.7, delay:0.05});
@@ -581,6 +667,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= SCROLL REVEALS ================= */
   gsap.registerPlugin(ScrollTrigger);
+
+  // Generic fade/slide-up reveal for elements
   gsap.utils.toArray('.reveal').forEach((el,i)=>{
     gsap.to(el, {
       opacity:1, y:0, duration:0.8, ease:'power2.out',
@@ -588,15 +676,179 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* card tilt on hover */
+  /* ================= SERVICES 3D STAGGER ENTRANCE ================= */
+  gsap.set('#services .three3d-element', {
+    opacity: 0,
+    y: 80,
+    rotateX: 25,
+    rotateY: -15,
+    transformPerspective: 1200,
+    transformOrigin: "center top"
+  });
+
+  gsap.to('#services .three3d-element', {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    rotateY: 0,
+    duration: 1.2,
+    stagger: 0.1,
+    ease: 'power4.out',
+    scrollTrigger: {
+      trigger: '#services .svc-grid',
+      start: 'top 80%',
+    }
+  });
+
+  /* card tilt on hover (updated for smoother GSAP animations) */
   document.querySelectorAll('.svc-card').forEach(card=>{
     card.addEventListener('mousemove', e=>{
       const r = card.getBoundingClientRect();
-      const rx = ((e.clientY - r.top)/r.height - 0.5) * -6;
-      const ry = ((e.clientX - r.left)/r.width - 0.5) * 6;
-      card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+      const rx = ((e.clientY - r.top)/r.height - 0.5) * -12;
+      const ry = ((e.clientX - r.left)/r.width - 0.5) * 12;
+      gsap.to(card, {
+        rotateX: rx,
+        rotateY: ry,
+        y: -6,
+        duration: 0.3,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
     });
-    card.addEventListener('mouseleave', ()=>{ card.style.transform=''; });
+    card.addEventListener('mouseleave', ()=>{ 
+      gsap.to(card, {
+        rotateX: 0,
+        rotateY: 0,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    });
+  });
+
+  /* ================= WHY US 3D PARALLAX & TILT ================= */
+  gsap.set('.why-visual', {
+    opacity: 0,
+    scale: 0.9,
+    rotateY: 15,
+    rotateX: 10,
+    transformPerspective: 1200
+  });
+
+  gsap.to('.why-visual', {
+    opacity: 1,
+    scale: 1,
+    rotateY: 0,
+    rotateX: 0,
+    duration: 1.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.why-visual',
+      start: 'top 80%',
+    }
+  });
+
+  // Parallax translation inside the image
+  gsap.set('.why-visual img', { scale: 1.18 });
+  gsap.to('.why-visual img', {
+    yPercent: 8,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.why-visual',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  // Parallax float on the stat-plate
+  gsap.to('.stat-plate', {
+    yPercent: -20,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.why-visual',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  /* ================= FOUNDER CARDS 3D FLIP ================= */
+  gsap.set('.founders .three3d-element', {
+    opacity: 0,
+    rotateY: 85,
+    scale: 0.9,
+    transformPerspective: 1200
+  });
+
+  gsap.to('.founders .three3d-element', {
+    opacity: 1,
+    rotateY: 0,
+    scale: 1,
+    duration: 1.2,
+    stagger: 0.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.founders',
+      start: 'top 85%',
+    }
+  });
+
+  /* ================= CONTACT INFO & FORM 3D ENTRANCE ================= */
+  gsap.set('#contact .contact-info', {
+    opacity: 0,
+    x: -80,
+    rotateY: 15,
+    transformPerspective: 1200,
+    transformOrigin: "left center"
+  });
+
+  gsap.to('#contact .contact-info', {
+    opacity: 1,
+    x: 0,
+    rotateY: 0,
+    duration: 1.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '#contact',
+      start: 'top 75%',
+    }
+  });
+
+  gsap.set('#contact .form-panel', {
+    opacity: 0,
+    x: 80,
+    rotateY: -15,
+    transformPerspective: 1200,
+    transformOrigin: "right center"
+  });
+
+  gsap.to('#contact .form-panel', {
+    opacity: 1,
+    x: 0,
+    rotateY: 0,
+    duration: 1.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '#contact',
+      start: 'top 75%',
+    }
+  });
+
+  /* ================= GLOW BLOBS DYNAMIC DRIFT ================= */
+  gsap.utils.toArray('.glow-blob').forEach((blob, i) => {
+    gsap.to(blob, {
+      y: (i % 2 === 0 ? 100 : -100),
+      x: (i % 2 === 0 ? 40 : -40),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: blob.parentNode,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
   });
 
   /* counter */
